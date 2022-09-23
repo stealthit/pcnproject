@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .unit-wrap {display: flex;flex-direction: column; gap:10px;}
+    .unit-con-cont {display: flex;gap:10px;}
+    input[type=text] {width: 120px;}
+    select {width: 120px;}
+  </style>
+</head>
+<body>
+  <div class="unit-wrap">
+    <div class="unit-con">
+      <div class="unit-title">ICON</div>
+      <div class="unit-con-cont">
+        <div class="ic-bookmark"></div>
+        <div class="ic-bookmark on"></div>
+        <div class="ic-location"></div>
+        <div class="ic-error"></div>
+      </div>
+    </div>
+    <div class="unit-con">
+      <div class="unit-title">INPUT</div>
+      <div class="unit-con-cont">
+        <div class="select-wrap">
+          <select class="select-box" name="" id="">
+            <option value="">전체</option>
+            <option value="">선택1</option>
+            <option value="">선택2</option>
+          </select>
+        </div>
+        <input type="text">
+        <input type="text" name="" id="" placeholder="검색어">
+        <input type="text" disabled>
+        <div class="input-wrap">
+          <input type="text" class="ic-id" placeholder="검색어" />
+          <button class="btn-clear"></button>
+        </div>
+      </div>
+    </div>
+    <div class="unit-con">
+      <div class="unit-title">BUTTON</div>
+      <div class="unit-con-cont">
+        <button class="btn-white">취소</button>
+        <button class="btn-common btn-save">저장</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

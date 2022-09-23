@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FISS</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="login-content">
+      <div class="left-area"></div>
+      <div class="right-area">
+        <div class="login-title">Log In</div>
+        <div class="login-input">
+          <div class="id">
+            <span></span>
+            <input type="text" name="" id="" placeholder="아이디를 입력해주세요.">
+          </div>
+          <div class="password">
+            <span></span>
+            <input type="password" name="" id="" placeholder="비밀번호를 입력해주세요.">
+          </div>
+          <p class="error">아이디 혹은 비밀번호가 올바르지 않습니다.<br>
+            다시 입력해주세요</p>
+          <button class="btn-login">로그인</button>
+        </div>
+        <div class="login-bottom">(주) PCN © 2020-2023</div>
+      </div>
+    </div>
+  </div>
+  <script src="../scripts/jquery-3.6.0.min.js"></script>
+  <script src="../scripts/jquery-ui.min.js"></script>
+  <script src="../scripts/script.js"></script>
+  <script>
+    $(".btn-login").on("click",function(){
+      $("p.error").addClass("active");
+    })
+  </script>
+</body>
+</html>

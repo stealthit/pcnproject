@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+    <path style="fill:none" d="M0 0h14v14H0z"/>
+    <g data-name="그룹 78">
+        <path data-name="Op component 1" transform="translate(4.278 5.446)" style="fill:#082e59" d="M0 0h1.556v5.444H0z"/>
+        <path data-name="Op component 2" transform="translate(8.167 5.446)" style="fill:#082e59" d="M0 0h1.556v5.444H0z"/>
+        <path data-name="Op component 3" d="M3440.221 682.332h-3.889V680h-5.444v2.333H3427v1.556h.778V694h11.667v-10.112h.777zm-7.778-.777h2.333v.777h-2.333zm5.445 10.889h-8.555v-8.556h8.555z" transform="translate(-3426.61 -679.999)" style="fill:#082e59"/>
+    </g>
+</svg>

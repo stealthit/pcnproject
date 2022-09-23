@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="modal-mapLabel">
+    <div class="modal-top">
+      <div class="box-title">지도</div>
+      <div class="ic-modal-close close"></div>
+    </div>
+    <div class="modal-body">
+      <div class="content-info">
+        <div class="button-sgroup">
+          <button class="btn-type02 btn-select"><img class="ic-check" alt="">전체선택</button>
+          <button class="btn-type02 btn-unselect"><img class="ic-unselect" alt="">선택해제</button>
+        </div>
+      </div>    
+      <div class="input-main-box">
+        <details open>
+          <summary>
+            <img src="" alt="">선로
+            <div href="#" class="area_btn">
+              <span>범례</span>
+              <div class="area_btn_tooltip area_btn_con1">
+                <h2 class="area_con_title">선로</h2>
+                <div class="unit_content">
+                  <div class="rmg15 bmg15 area_con_row">
+                    <div class="line_core_con">
+                      <div class="line_con line-4core"></div>
+                      <div class="line_con line-4core_n"></div> 
+                    </div>
+                    4/8/12 통신선로(가공/지중)
+                  </div>
+                  <div class="rmg15 bmg15 area_con_row">
+                    <div class="line_core_con">
+                      <div class="line_con line-24core"></div>
+                      <div class="line_con line-24core_n"></div> 
+                    </div>
+                    24/36/48 통신선로(가공/지중)
+                  </div>
+                  <div class="rmg15 bmg15 area_con_row">
+                    <div class="line_core_con">
+                      <div class="line_con line-72core"></div>
+                      <div class="line_con line-72core_n"></div> 
+                    </div>
+                    72/96 통신선로(가공/지중)
+                  </div>
+                  <div class="rmg15 bmg15 area_con_row">
+                    <div class="line_core_con">
+                      <div class="line_con line-144core"></div>
+                      <div class="line_con line-144core_n"></div> 
+                    </div>
+                    144/288 통신선로(가공/지중)
+                  </div>
+                  <div class="rmg15 bmg15 area_con_row">
+                    <div class="line_core_con">
+                      <div class="line_con line-elcore"></div>
+                      <div class="line_con line-elcore_n"></div> 
+                    </div>
+                    전기선로(가공/지중)
+                  </div>
+                  <div class="rmg15 bmg15 area_con_row">
+                    <div class="line_core_con">
+                      <div class="line_con line-holecore"></div>
+                    </div>
+                    관로(지중)
+                  </div>
+                </div>
+              </div>            
+            </div>
+          </summary>
+          <ul>
+            <li>       
+              <input type="checkbox" id="cb11" name="">
+              <label for="cb11">                
+                <span class="text"><div class="line_con line-4core"></div>통신선로</span>
+              </label>                     
+            </li>
+            <li>
+              <input type="checkbox" id="cb12" name="">
+              <label for="cb12">                
+                <span class="text"><div class="line_con line-elcore"></div>전기</span>
+              </label>                  
+            </li>
+            <li>
+              <input type="checkbox" id="cb13" name="">
+              <label for="cb13">                
+                <span class="text"><div class="line_con line-holecore"></div>관로</span>
+              </label>       
+            </li>
+          </ul>
+        </details>
+        <details open>
+          <summary class="f-between">
+            <div class="sum-lt">
+              <img src="" alt="">시설물
+              <div class="area_btn">
+                <span>범례</span>
+                <div class="area_btn_tooltip area_btn_con2">
+                  <h2 class="area_con_title">시설물 ICON 정보</h2>
+                  <div class="unit_content">
+                    <div class="rmg15 bmg15 area_con_row">
+                      <div class="icon-bus">Icon-버스도착정보안내기</div>
+                      버스도착정보안내기 (BIT -Bus Information Terminal)
+                    </div>
+                    <div class="rmg15 bmg15 area_con_row">
+                      <div class="icon-traffic">Icon-교통신호 제어기</div>
+                      교통신호 제어기 (Traffic Signal Controller)
+                    </div>
+                    <div class="rmg15 bmg15 area_con_row">
+                      <div class="icon-cctv">Icon-폐쇄회로텔레비전</div>
+                      폐쇄회로텔레비전 (CCTV - Closed Circuit TeleVision)
+                    </div>
+                    <div class="rmg15 bmg15 area_con_row">
+                      <div class="icon-ing">Icon-인공</div>
+                      <div class="icon-sug">Icon-수공</div>
+                      인수공 -인공 (맨홀 _ Manhole) / 수공 (핸드홀 - Handhole)
+                    </div>
+                    <div class="rmg15 bmg15 area_con_row">
+                      <div class="icon-tr">Icon-지상설치형 변압기</div>
+                      지상설치형 변압기 (Power TRansformer)
+                    </div>
+                    <div class="rmg15 bmg15 area_con_row">
+                      <div class="icon-pole-01">Icon-한전주</div>
+                      <div class="icon-pole-02">Icon-IP전주</div>
+                      전주 - 한전주 / IP전주
+                    </div>
+                    <div class="rmg15 bmg15 area_con_row">
+                      <div class="icon-standard">Icon-함체</div>
+                     함체
+                    </div>
+                    <div class="rmg15 bmg15 area_con_row">
+                      <div class="icon-telephone">Icon-국사</div>
+                      국사 (전화국/통신국사)
+                    </div>
+                  </div>
+                </div>            
+              </div>
+            </div>
+            <div class="sum-rt">라벨</div>
+          </summary>
+          <ul>
+            <li class="labelList f-between"> 
+              <div class="sum-lt">
+                <input type="checkbox" id="cb21" name="">
+                <label for="cb21">                
+                  <span class="text">전주</span>
+                </label>              
+              </div>
+              <div class="sum-rt"><input type="checkbox" id="cb22" name=""></div>
+            </li>
+            <li class="smallList">
+              <input type="checkbox" id="cb22" name="">
+              <label for="cb22">                
+                <span class="text"><div class="icon-pole-01">Icon-전주-한전주</div>한전주</span>
+              </label>                    
+            </li>
+            <li class="smallList">
+              <input type="checkbox" id="cb23" name="">
+              <label for="cb23">                
+                <span class="text"><div class="icon-pole-02">Icon-전주-IP주</div>IP주</span>
+              </label>                
+            </li>
+            <li class="labelList f-between"> 
+              <div class="sum-lt">
+                <input type="checkbox" id="cb24" name="">
+                <label for="cb24">                
+                  <span class="text"><div class="icon-traffic">Icon-교통신호제어기</div>TR</span>
+                </label>              
+              </div>
+              <div class="sum-rt"><input type="checkbox" id="cb22" name=""></div>
+            </li>
+            <li class="labelList f-between"> 
+              <div class="sum-lt">
+                <input type="checkbox" id="cb25" name="">
+                <label for="cb25">                
+                  <span class="text"><div class="icon-standard">Icon-함체</div>함체</span>
+                </label>              
+              </div>
+              <div class="sum-rt"><input type="checkbox" id="cb22" name=""></div>
+            </li>
+            <li class="labelList f-between"> 
+              <div class="sum-lt">
+                <input type="checkbox" id="cb26" name="">
+                <label for="cb26">                
+                  <span class="text">인수공</span>
+                </label>              
+              </div>
+              <div class="sum-rt"><input type="checkbox" id="cb22" name=""></div>
+            </li>
+            <li class="smallList">
+              <input type="checkbox" id="cb27" name="">
+              <label for="cb27">                
+                <span class="text"><div class="icon-ing"></div>인공</span>
+              </label>                    
+            </li>
+            <li class="smallList">
+              <input type="checkbox" id="cb28" name="">
+              <label for="cb28">                
+                <span class="text"><div class="icon-sug"></div>수공</span>
+              </label>                    
+            </li>      
+          </ul>
+        </details>
+        <details open>
+          <summary><img src="" alt="">기타
+            <div href="#" class="area_btn">
+              <span>범례</span>
+              <div class="area_btn_tooltip area_btn_con3">
+                <h2 class="area_con_title">기타 ICON 정보</h2>
+                <div class="unit_content">
+                  <div class="rmg15 bmg15 area_con_row">
+                    <div class="icon-memo">Icon-메모</div>
+                    메모
+                  </div>
+                </div>
+              </div>     
+            </div>
+          </summary>
+          <ul>
+            <li class="labelList f-between"> 
+              <div class="sum-lt">
+                <input type="checkbox" id="cb24" name="">
+                <label for="cb3">                
+                  <span class="text"><div class="icon-memo">메모</div>메모</span>
+                </label>              
+              </div>
+              <div class="sum-rt"><input type="checkbox" id="cb22" name=""></div>
+            </li>
+          </ul>
+        </details>
+      </div>
+      <div class="button-group">
+        <button class="btn-white">취소</button>
+        <button class="btn-common">저장</button>
+      </div>
+    </div>
+  </div>
+  <script src="../scripts/jquery-3.6.0.min.js"></script>
+  <script src="../scripts/jquery-ui.min.js"></script>
+  <script src="../scripts/script.js"></script>
+</body>
+</html>
