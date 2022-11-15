@@ -612,7 +612,7 @@
 }
 
 .modal-search {
-  width: 480px;
+  width: 400px;
 }
 
 .modal-search .modal-body {
@@ -678,6 +678,7 @@
   font-weight: bold;
   color: #999;
   padding: 0 14px;
+  margin-top: 7px;
 }
 
 .modal-search .modal-body .result-box {
@@ -790,7 +791,7 @@ ul.result-list li .item-right {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 15px;
-  width: 80px;
+  width: 120px;
 }
 
 .modal-edit .modal-body .input-box .tab-content .content-info .table-wrapper {
@@ -1384,16 +1385,18 @@ ul.result-list li .item-right {
 }
 
 .modal-sunView {
-  width: 900px;
+  width: 580px;
 }
 
 .modal-sunView .modal-body {
+  max-height: 700px;
   overflow: overlay;
 }
 
 .modal-sunView .content-edit-wrap {
+  max-width: 550px;
   overflow-x: overlay;
-  min-height: 150px;
+  height: 110px;
   margin: 10px 0 0;
   padding: 10px 10.8px 10px 10px;
   border: solid 1px #d6d6d6;
@@ -1409,8 +1412,7 @@ ul.result-list li .item-right {
 }
 
 .modal-sunView .content-edit-wrap .node-point-wrap .node-point {
-  width: 150px;
-  padding: 0 5px;
+  width: 75px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1429,16 +1431,9 @@ ul.result-list li .item-right {
 }
 
 .modal-sunView .content-edit-wrap .node-point-wrap .node-point .node-point-title {
-  height: 36px;
+  height: 18px;
   font-size: 12px;
   color: #111;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  text-align: center;
 }
 
 .modal-sunView .content-edit-wrap .node-point-wrap .node-point .node-point-circle {
@@ -1465,7 +1460,7 @@ ul.result-list li .item-right {
 }
 
 .modal-sunView .content-edit-wrap .node-point-wrap .node-point .node-point-info .node-point-line {
-  width: 145px;
+  width: 70px;
   height: 25px;
   margin: 10.5px 0 6.2px 11.3px;
   border: solid 1px #666;
@@ -2038,7 +2033,7 @@ ul.result-list li .item-right {
 }
 
 .modal-favorite {
-  width: 480px;
+  width: 400px;
 }
 
 .modal-favorite .modal-top {
@@ -2139,7 +2134,8 @@ ul.box-input li {
 }
 
 .map_detail_rect {
-  width: auto;
+  min-width: 270px;
+  width: 270px;
   height: 125px;
   display: none;
 }
@@ -2159,9 +2155,8 @@ ul.box-input li {
 }
 
 .map_detail_con {
-  padding-right: 10px;
-  padding-bottom: 10px;
-  height: auto;
+  width: 260px;
+  height: 125px;
   border-radius: 0 4px 4px 0;
   -webkit-box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.25);
           box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.25);
@@ -2249,10 +2244,6 @@ ul.box-input li {
 
 .map_detail_rect .map_con_eixt .icon-bus {
   margin-right: 12px;
-}
-
-.map_detail_rect .map_con_eixt > p {
-  white-space: nowrap;
 }
 
 .map_detail_rect .map_con_list {
