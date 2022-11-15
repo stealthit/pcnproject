@@ -273,7 +273,7 @@
 // ---- end common ------------------
 // search
 .modal-search {  
-  width: 400px;
+  width: 480px;
   .modal-body {
     overflow: hidden;    
     // min-height: 500px;
@@ -309,14 +309,13 @@
         flex: 1;
         input[type=text] {border: none;}
       }
-    }
-
+    }    
     p {
       font-size: 12px;
       font-weight: bold;
       color: #999;
       padding: 0 14px; 
-      margin-top: 7px;     
+      // margin-top: 7px;     
     }
 
     .result-box {
@@ -382,7 +381,7 @@ ul.result-list {
     .item-right {
       @include flex_center;
       gap: 15px;
-      width: 120px;
+      width: 80px;
     }
   }
 }
@@ -749,15 +748,15 @@ ul.result-list {
   }
 }
 .modal-sunView {
-  width: 580px;
+  width: 900px;
   .modal-body {
-    max-height: 700px;
+    // max-height: 700px;
     overflow: overlay;
   }
   .content-edit-wrap {
-    max-width: 550px;
+    // max-width: 550px;
     overflow-x: overlay;
-    height: 110px;
+    min-height: 150px;
     margin: 10px 0 0;    
     padding: 10px 10.8px 10px 10px;
     border: solid 1px #d6d6d6;
@@ -768,7 +767,8 @@ ul.result-list {
       // flex: 0 0 auto;
       // justify-content: space-between;
       .node-point {
-        width: 75px;
+        width: 150px;
+        padding: 0 5px;
         display: flex;
         flex-direction: column;
         gap: 7px;
@@ -776,9 +776,12 @@ ul.result-list {
         flex: 0 0 auto;
         position: relative;  
         .node-point-title {          
-          height: 18px;          
+          height: 36px;          
           font-size: 12px;          
           color: #111;
+          display: flex;
+          align-items: flex-start;
+          text-align: center;
         }      
         .node-point-circle {
           width: 18px;
@@ -793,7 +796,7 @@ ul.result-list {
           align-items: center;
           top:calc(100% - 12px); left:calc(50% - 8px);          
           .node-point-line {
-            width: 70px;
+            width: 145px;
             height: 25px;
             margin: 10.5px 0 6.2px 11.3px;
             border: solid 1px #666;
@@ -1119,7 +1122,7 @@ ul.result-list {
 }
 .modal-favorite {
   // display: none;
-  width: 400px;
+  width: 480px;
   .modal-top {margin-bottom: 0;}
 }
 
@@ -1179,9 +1182,9 @@ ul.box-input {
 
 
 
-.map_detail_rect{min-width:270px;width:270px;height:125px; display:none;}
+.map_detail_rect{width:auto;height:125px; display:none;}
 .map_detail_arrow{content:""; border-top:10px solid transparent;  border-right:10px solid #fff;  border-bottom:10px solid transparent;  border-left:10px solid transparent; position:absolute;width:0; height:0; left:-20px;top:calc(50% - 7px);font-size:0;}
-.map_detail_con{width:260px;height:125px;border-radius: 0 4px 4px 0;  box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.25);  border: solid 1px rgba(0, 0, 0, 0.1);  background-color: #fff}
+.map_detail_con{padding-right: 10px;padding-bottom: 10px;height:auto;border-radius: 0 4px 4px 0;  box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.25);  border: solid 1px rgba(0, 0, 0, 0.1);  background-color: #fff}
 
 
 .map_detail_rect.line-4core .map_detail_arrow,
@@ -1218,8 +1221,9 @@ ul.box-input {
 .map_detail_con_title{margin: 10px 0 8px 19px;font-size: 13px;color:#999;}
 .map_detail_rect {
   .map_con_eixt{
-    display: flex;font-size: 18px;margin:0 0 8px 15px;align-items: center;
+    display: flex;font-size: 18px;margin:0 0 8px 15px;align-items: center;    
     .icon-bus{margin-right: 12px;}
+    & > p {white-space: nowrap;}
   }
   .map_con_list{font-size: 14px;color:#666;font-weight: 400;margin-left: 20px;}
 }
