@@ -69,18 +69,18 @@ function loadLeft(sName){
 // modal Event
 function loadEvent() {
   // modal-search
-  $(".modal-search ul.tab-box li").on("click",function(){    
-    var idx = $(this).index();
+  // $(".modal-search ul.tab-box li").on("click",function(){    
+  //   var idx = $(this).index();
     
-    $('.modal-search ul.result-list li').each(function (index, item) {
-      if (idx == 0) $(this).css('display','flex');
-      else if (idx-1 == (index%4)) $(this).css('display','flex');
-      else  $(this).css('display','none');
-    });	
-  })
+  //   $('.modal-search ul.result-list li').each(function (index, item) {
+  //     if (idx == 0) $(this).css('display','flex');
+  //     else if (idx-1 == (index%4)) $(this).css('display','flex');
+  //     else  $(this).css('display','none');
+  //   });	
+  // })
 
   $(".modal-search .btn-search").on("click",function(){
-    $(".modal-search .result-box").css("display","block");
+    $(".modal-search .result-box").css("display","flex");
     $(".modal-search .no-data").removeClass("active");
   })
   
@@ -88,14 +88,14 @@ function loadEvent() {
   $(".modal-edit .btn-add").on("click", function(){   
     $('#right-area .right-area-box').children().hide(); 
       $('#right-area').show();      
-      $('.modal-register').show();
+      $('.modal-register').css("display", "flex");
       // $("body").css("overflow", "hidden");       
   })
   // modal-connect
   $("#btn-connect").on("click",function(){
     $('#right-area .right-area-box').children().hide();
     $('#right-area').show();      
-    $('.modal-connect').show();
+    $('.modal-connect').css("display", "flex")
   })
   // modal-disconnect
   $("#btn-disconnect").on("click",function(){    
@@ -147,6 +147,44 @@ function loadEvent() {
     const tabId = $(this).attr("data-tab"); 
     
     $("#" + tabId).addClass("active").siblings().removeClass('active');
+
+    /***** Canvas ********************/
+    // 상세정보 -> 선번장 -> 도면
+    // var lineHeight = $(".line_conect_con").height();
+    // var lineWidth = $(".line_conect_con").width();
+    // var sx = $(".line_conect_con .icon1").offset().left + $(".line_conect_con .icon1").outerWidth();
+    // var ex = $(".line_conect_con .icon2").offset().left;    
+    // var lineCanvas = document.getElementById("lineCanvas");
+    // if (lineCanvas == null || lineCanvas.getContext == null) return;
+    // lineCanvas.height = lineHeight;
+    // lineCanvas.width = lineWidth;
+    // var line_context_canvas = lineCanvas.getContext("2d");    
+    
+    // line_context_canvas.strokeStyle = "#1717fb";
+    // line_context_canvas.moveTo(sx-26,123);
+    // line_context_canvas.lineTo(ex-26,123);          
+    // line_context_canvas.stroke();
+
+    // 상세정보 -> 선번장 테이블의 Canvas
+    var cvHeight = $(".tb-sunbun .jb-table").height();
+    var sbCanvas = document.getElementById("sbCanvas");
+    if (sbCanvas == null || sbCanvas.getContext == null) return;
+    sbCanvas.height = cvHeight;
+    var context_canvas = sbCanvas.getContext("2d");
+    context_canvas.strokeStyle = "#ff6c00";
+    context_canvas.moveTo(0,50);
+    context_canvas.lineTo(0+250*1,50*1);    
+    context_canvas.moveTo(0,50+32);
+    context_canvas.lineTo(0+250*1,50+32*1);  
+    context_canvas.moveTo(0,50+32*2);
+    context_canvas.lineTo(0+250*1,50+32*2);  
+    context_canvas.moveTo(0,50+32*3);
+    context_canvas.lineTo(0+250*1,50+32*3);  
+    context_canvas.moveTo(0,50+32*4);
+    context_canvas.lineTo(0+250*1,50+32*4);  
+    context_canvas.moveTo(0,50+32*5);
+    context_canvas.lineTo(0+250*1,50+32*5);      
+    context_canvas.stroke();
   });
 
   //common
@@ -186,6 +224,14 @@ $('.area_btn').on("mouseleave",function(e){
     $(this).addClass('active').siblings().removeClass('active');
   })
 
+  $('.line-base').on('click', function(e){
+    var strLine = e.currentTarget.innerText;
+    var num = strLine.replace(/[^0-9]/g,'');
+    if ($(this).hasClass('line-blue')) $(this).removeClass('line-blue');
+    else if ($(this).hasClass('line-orange')) $(this).removeClass('line-orange');    
+    else if (num%2 == 0) $(this).addClass('line-blue');
+    else $(this).addClass('line-orange');  
+  })
 }
 
 function loadRight(sName){  
@@ -222,20 +268,20 @@ function ModalPopup2(sName){
 
 // 장애정보 Rolling 
 function ticker() {
-  timer = setTimeout(function(){
-    $('#ticker li:first').animate( {marginTop: '-40px'}, 2000, function()
+  timer = setInterval(function(){
+    $('#ticker li:first').stop().animate( {marginTop: '-40px'}, 2000, function()
     {
       $(this).detach().appendTo('ul#ticker').removeAttr('style');
-    });
-    ticker();
+    });    
   }, 3000);         
 };           
 
 function tickerover() {
-  $('#ticker').mouseover(function(){
-    clearTimeout(timer);
+  $('#ticker').mouseover(function(){    
+    clearInterval(timer);
   });
   $('#ticker').mouseout(function(){
+    clearInterval(timer);
     ticker();
   });  
 };
@@ -407,3 +453,5 @@ function toast(string) {
 //       toast('즐겨찾기에 추가 되었습니다.');
 //   }
 // });
+
+

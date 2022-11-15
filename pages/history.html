@@ -6,9 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* .modal-history {display:block;} */
+  </style>
 </head>
 <body>
-  <div class="modal-history">
+  <div class="modal-history modal-wrap">
     <div class="modal-top">
       <div class="box-title">이력관리</div>
       <div class="ic-modal-close close"></div>
@@ -22,15 +25,17 @@
                 <col width="8%">
                 <col width="18%">
                 <col width="16%">
-                <col width="13%">
+                <col width="10%">
+                <col width="15%">
                 <col width="15%">
                 <col width="*">
               </colgroup>
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>날짜</th>
-                  <th>시간</th>
+                  <th>일시</th>
+                  <th>대상</th>
+                  <th>위치</th>
                   <th>사용자</th>
                   <th>분류</th>
                   <th>상세내용</th>
@@ -39,43 +44,68 @@
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>2021-07-27</td>
-                  <td>14:25:30</td>
+                  <td>2021-07-27 14:25:30</td>
+                  <td>함체_0001</td>
+                  <td>
+                    <div class="f-center">
+                      <button type="button" class="location-btn">위치보기</button>
+                    </div>
+                  </td>
                   <td>이중관</td>
                   <td>신규입력</td>
                   <td>-</td>
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td>2021-07-26</td>
-                  <td>10:15:30</td>
-                  <td>이중관</td>
+                  <td>2021-07-26 10:15:30</td>
+                  <td>CCTV_1423</td>
+                  <td>
+                    <div class="f-center">
+                      <button type="button" class="location-btn">위치보기</button>
+                    </div>
+                  </td>
+                  <td>김용한</td>
                   <td>위치이동</td>
                   <td>좌표변경(위치이동)</td>
                 </tr>
                 <tr>
-                  <td>2</td>
-                  <td>2021-07-26</td>
-                  <td>10:15:30</td>
-                  <td>이중관</td>
-                  <td>위치이동</td>
-                  <td>좌표변경(위치이동)</td>
+                  <td>3</td>
+                  <td>2021-07-26 10:15:30</td>
+                  <td>통신선로_0001</td>
+                  <td>
+                    <div class="f-center">
+                      <button type="button" class="location-btn">위치보기</button>
+                    </div>
+                  </td>
+                  <td>김용한</td>
+                  <td>정보수정</td>
+                  <td>관련자료 업로드</td>
                 </tr>
                 <tr>
-                  <td>2</td>
-                  <td>2021-07-26</td>
-                  <td>10:15:30</td>
-                  <td>이중관</td>
-                  <td>위치이동</td>
-                  <td>좌표변경(위치이동)</td>
+                  <td>4</td>
+                  <td>2021-07-26 10:15:30</td>
+                  <td>BIT_14876</td>
+                  <td>
+                    <div class="f-center">
+                      <button type="button" class="location-btn">위치보기</button>
+                    </div>
+                  </td>
+                  <td>System</td>
+                  <td>장애발생</td>
+                  <td>Port Down : No.14</td>
                 </tr>
                 <tr>
-                  <td>2</td>
-                  <td>2021-07-26</td>
-                  <td>10:15:30</td>
-                  <td>이중관</td>
-                  <td>위치이동</td>
-                  <td>좌표변경(위치이동)</td>
+                  <td>5</td>
+                  <td>2021-07-26 10:15:30</td>
+                  <td>BIT_14876</td>
+                  <td>
+                    <div class="f-center">
+                      <button type="button" class="location-btn">위치보기</button>
+                    </div>
+                  </td>
+                  <td>System</td>
+                  <td>장애조치</td>
+                  <td>Port Up : No.14</td>
                 </tr>
               </tbody>
             </table>

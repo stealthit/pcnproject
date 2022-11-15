@@ -91,3 +91,9 @@
   border-radius: 4px;
   font-size: 12px;
 }
+
+@mixin icon_images($name) {
+  .#{$name}{width:22px;height:22px;background:transparent url(../assets/#{$name}-N.png) no-repeat center center/cover; font-size:0}
+  .#{$name}:hover,
+  .#{$name}.active{background:transparent url(../assets/#{$name}-S.png) no-repeat center center/cover;}
+}

@@ -148,7 +148,7 @@
 
         &.active {
           border: solid 1px #f00;
-          background-color: rgba(255, 0, 0, 0.1);
+          background-color: #fbd0d0;
         }
         &.active,&:hover {
           img {          
@@ -168,8 +168,13 @@
     position: absolute;
     top: 70px;
     left: 10px;
-    z-index: 100;
-    .left-area-box {background: white;}
+    z-index: 100;    
+    height: 100%;
+    max-height: calc(100% - 140px);
+    .left-area-box {
+      height: 100%;
+      background: white;
+    }
   }
   #right-area {  
     display: none;      
@@ -177,7 +182,10 @@
     top: 70px;
     right: 10px;  
     z-index: 100;  
+    height: 100%;
+    max-height: calc(100% - 140px);
     .right-area-box {
+      height: 100%;
       background: white;
     }
 
@@ -265,9 +273,10 @@
 // ---- end common ------------------
 // search
 .modal-search {  
-  width: 400px;
+  width: 480px;
   .modal-body {
-    min-height: 500px;
+    overflow: hidden;    
+    // min-height: 500px;
     display: flex;
     flex-direction: column;
     .search-box {
@@ -300,31 +309,37 @@
         flex: 1;
         input[type=text] {border: none;}
       }
-    }
-
+    }    
     p {
       font-size: 12px;
       font-weight: bold;
       color: #999;
       padding: 0 14px; 
-      margin-top: 7px;     
+      // margin-top: 7px;     
     }
 
     .result-box {
+      height: calc(100% - 79px);
       display: none;
+      flex-direction: column;
       flex: 1;
       .select-box {
         margin: 10px 0;
+        ul.tab-box {
+          height: auto;
+          flex-wrap: wrap;
+          row-gap: 5px;
+        }
       }
     }
   }
 }
 
 ul.result-list {
+  overflow: overlay;
   display: flex;
   flex-direction: column;
-  max-height: 550px;
-  overflow: overlay;
+  // max-height: 550px;  
   border-top: 1px solid #ddd;
   li {
     display: flex;          
@@ -366,7 +381,7 @@ ul.result-list {
     .item-right {
       @include flex_center;
       gap: 15px;
-      width: 120px;
+      width: 80px;
     }
   }
 }
@@ -408,8 +423,10 @@ ul.result-list {
     span {top:10px;left:10px;color:#666;font-size:12px;}
     .icon-standard {
       width:20px;height:20px;background-size:100%;
-      &:hover {border:none;}
-    }
+      &:hover {border-color:#ff5500}
+      z-index: 2;
+    } 
+    canvas {z-index: 1;}   
   }
 
   .port-txt {
@@ -421,6 +438,37 @@ ul.result-list {
   table.port-table {
     &:not(:first-child) thead {
       border-top: none;
+    }
+  }
+
+  .tb-edit-on {
+    @include flex_center;
+    .select-wrap { width: 80px;}
+  }
+
+  .input-box {
+    display: flex;
+    flex-direction: column;
+
+    .tab-content {
+      // display: flex;
+      max-height: 100% !important;
+      &.active { display: flex;}
+      flex-direction: column;
+      flex: 1;      
+      overflow: overlay;
+
+      .content-info.sunbun {
+        flex: 1;
+        display: flex;
+        overflow: hidden;
+        flex-direction: column;
+        .sub-title {height: auto;}
+        .content-edit-wrap {
+          flex: 1;
+          overflow: overlay;      
+        }
+      }
     }
   }
 }
@@ -456,15 +504,41 @@ ul.result-list {
     display: flex;
     align-items: center;    
   }
-  td > a.btn-insert {margin-left:14px;}
+  td > a.btn-insert {margin:0 5px;}
 }
 .modal-business,.modal-history {
-  display: none;
-  width: 550px;
-  // height: 300px;
+  // display: none;
+  width: 730px;  
+  // height: 300px;  
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+
+    .content-info {
+      margin: 20px 0 0;
+    }
+    .content-info:nth-child(2) {
+      flex: 1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+
+      .content-edit-wrap {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        overflow: hidden;
+
+        .table-wrapper {
+          overflow: overlay;
+          flex: 1;
+        }
+      }
+    }
+  }
 }
 .modal-alarm, .modal-nms {
-  display: none;
+  // display: none;
   width: 760px;
 
   button{
@@ -477,7 +551,7 @@ ul.result-list {
 }
 // 입력
 .modal-input {
-  display: none;
+  display: flex;
   width: 300px;
   padding-bottom: 20px;
 
@@ -551,15 +625,23 @@ ul.result-list {
 }
 // 지도라벨, 선번장
 .modal-mapLabel, .modal-sunbunjang {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 300px;
-
+  max-height: calc(100vh - 140px);  
+  
+  .modal-body {
+    flex: auto;
+    overflow: hidden;
+  }
   .content-info {
     margin: 14px 0 6px;
     .button-sgroup {justify-content: flex-start;}
   }
   .input-main-box {
-    max-height: 521px;
+    // max-height: 521px;
+    height: calc(100% - 48px);
     overflow-y:overlay;
     padding: 0 14px;
     details {
@@ -666,15 +748,15 @@ ul.result-list {
   }
 }
 .modal-sunView {
-  width: 580px;
+  width: 900px;
   .modal-body {
-    max-height: 700px;
+    // max-height: 700px;
     overflow: overlay;
   }
   .content-edit-wrap {
-    max-width: 550px;
+    // max-width: 550px;
     overflow-x: overlay;
-    height: 110px;
+    min-height: 150px;
     margin: 10px 0 0;    
     padding: 10px 10.8px 10px 10px;
     border: solid 1px #d6d6d6;
@@ -685,7 +767,8 @@ ul.result-list {
       // flex: 0 0 auto;
       // justify-content: space-between;
       .node-point {
-        width: 75px;
+        width: 150px;
+        padding: 0 5px;
         display: flex;
         flex-direction: column;
         gap: 7px;
@@ -693,9 +776,12 @@ ul.result-list {
         flex: 0 0 auto;
         position: relative;  
         .node-point-title {          
-          height: 18px;          
+          height: 36px;          
           font-size: 12px;          
           color: #111;
+          display: flex;
+          align-items: flex-start;
+          text-align: center;
         }      
         .node-point-circle {
           width: 18px;
@@ -710,7 +796,7 @@ ul.result-list {
           align-items: center;
           top:calc(100% - 12px); left:calc(50% - 8px);          
           .node-point-line {
-            width: 70px;
+            width: 145px;
             height: 25px;
             margin: 10.5px 0 6.2px 11.3px;
             border: solid 1px #666;
@@ -727,8 +813,25 @@ ul.result-list {
     }
   }
 }
-.tb-sunbun {  
+.tb-sunbun {    
+  overflow: auto;
   position: relative;  
+
+  .jb-table {
+    border-collapse: separate; /* Don't collapse */
+    border-spacing: 0;    
+    th {
+      position: sticky;
+      top: 1px;
+      background-color: #f9f9f9;      
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      z-index: 2;
+    }
+    td {
+      border-bottom: 1px solid #ddd;
+    }
+  }
   .tb-line {
     position: absolute;
     & * {
@@ -775,6 +878,14 @@ ul.result-list {
       background-color: #ff6c00;
       font-size: 0;
     }
+  }
+
+  #sbCanvas {
+    position:absolute;
+    left: 35%;
+    // top:0; /* 경우에 따라 필요해질 수 있음 */
+    // width: 100%;
+    // height:100%;
   }
 }
 .area_btn{
@@ -823,6 +934,7 @@ ul.result-list {
 
 .modal-setting{
   width: 640px;
+  .modal-body {overflow: hidden;}
   .level_box_con{
     width:100%;height:427px;margin:15px 0;display:flex;flex-direction: row;
 
@@ -853,6 +965,8 @@ ul.result-list {
       width:240px;height:427px;border:1px solid #ccc;border-radius:4px;
       .filter_ul{ 
         width: 100%; padding:10px 16px; display:flex; flex-direction: column;
+        overflow: overlay;
+        height: 100%;
         li{ 
           display:flex; 
           justify-content: flex-start; 
@@ -899,6 +1013,7 @@ ul.result-list {
       background-repeat: no-repeat;
       background-size: 360px 450px;
     }
+    .password-p {white-space: nowrap;}
     .right-area {
       position: relative;
       flex: 1;
@@ -907,7 +1022,7 @@ ul.result-list {
       gap: 20px;      
       padding: 116px 102px 20px 98px;
       .login-title {
-        width: 80px;
+        // width: 80px;
         height: 37px;      
         font-size: 26px;
         font-weight: 700;      
@@ -940,7 +1055,7 @@ ul.result-list {
           &.password span {
             background-image: url(../assets/ic_login_pw@2x.png);            
           }        
-          input[type=text] {
+          input[type=text],input[type=password] {
             outline: none;
             border: none;
             color: #111;            
@@ -1006,8 +1121,8 @@ ul.result-list {
   }
 }
 .modal-favorite {
-  display: none;
-  width: 400px;
+  // display: none;
+  width: 480px;
   .modal-top {margin-bottom: 0;}
 }
 
@@ -1044,6 +1159,10 @@ ul.box-input {
     &.active {
       display: block;
     }
+    .content-edit-wrap {
+      height: calc(100% - 44px);
+      overflow: overlay;  
+    }
     table td {text-decoration: underline;}
   }
   .line_con{width: 21px;}
@@ -1063,9 +1182,9 @@ ul.box-input {
 
 
 
-.map_detail_rect{min-width:270px;width:270px;height:125px; display:none;}
+.map_detail_rect{width:auto;height:125px; display:none;}
 .map_detail_arrow{content:""; border-top:10px solid transparent;  border-right:10px solid #fff;  border-bottom:10px solid transparent;  border-left:10px solid transparent; position:absolute;width:0; height:0; left:-20px;top:calc(50% - 7px);font-size:0;}
-.map_detail_con{width:260px;height:125px;border-radius: 0 4px 4px 0;  box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.25);  border: solid 1px rgba(0, 0, 0, 0.1);  background-color: #fff}
+.map_detail_con{padding-right: 10px;padding-bottom: 10px;height:auto;border-radius: 0 4px 4px 0;  box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.25);  border: solid 1px rgba(0, 0, 0, 0.1);  background-color: #fff}
 
 
 .map_detail_rect.line-4core .map_detail_arrow,
@@ -1102,8 +1221,9 @@ ul.box-input {
 .map_detail_con_title{margin: 10px 0 8px 19px;font-size: 13px;color:#999;}
 .map_detail_rect {
   .map_con_eixt{
-    display: flex;font-size: 18px;margin:0 0 8px 15px;align-items: center;
+    display: flex;font-size: 18px;margin:0 0 8px 15px;align-items: center;    
     .icon-bus{margin-right: 12px;}
+    & > p {white-space: nowrap;}
   }
   .map_con_list{font-size: 14px;color:#666;font-weight: 400;margin-left: 20px;}
 }
@@ -1194,4 +1314,3 @@ ul.box-input {
   }
   .map_detail_arrow_m{width:0px;height:0px; border-right:10px solid transparent; border-top:10px solid #fff}
 } 
-

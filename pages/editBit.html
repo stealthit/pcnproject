@@ -6,9 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* .modal-edit {display:block;} */
+  </style>
 </head>
 <body>
-  <div class="modal-edit modal-editBit">
+  <div class="modal-edit modal-editBit modal-wrap">
     <div class="modal-top">
       <div class="box-title">BIT상세정보</div>
       <div class="ic-modal-close close"></div>
@@ -21,6 +24,7 @@
           <li class="tab-menu" data-tab="tab03">관련자료</li>
           <li class="tab-menu" data-tab="tab04">선번장</li>                    
           <li class="tab-menu" data-tab="tab05">광스위치</li>                    
+          <li class="tab-menu" data-tab="tab06">Ring관리</li>                    
         </ul>    
         <div class="tab-content active" id="tab01">
           <div class="content-info">
@@ -125,6 +129,190 @@
                 <div class="row-content">
                   <input type="text" value />
                 </div>
+              </div>
+            </div>
+          </div>
+          <!-- 수전목록 -->
+          <div class="content-info">
+            <div class="sub-title">
+              <h2>수전목록</h2>
+            </div>
+            <div class="content-edit-wrap">
+              <div class="table-wrapper">
+                <table class="jb-table">
+                  <colgroup>
+                    <col style="width: 40%" />
+                    <col style="width: 30%" />
+                    <col style="width: 30%"/>                    
+                  </colgroup>
+                  <thead>
+                    <tr>                                    
+                      <th>선로ID</th>
+                      <th>규격</th>
+                      <th>연결접속점</th>                      
+                    </tr>
+                  </thead>
+                  <tbody class="table-body">
+                    <tr>
+                      <td>XXXX</td>
+                      <td>24C</td>
+                      <td>XXXX</td>                      
+                    </tr>
+                    <tr>
+                      <td>XXXX</td>
+                      <td>24C</td>
+                      <td>XXXX</td>                      
+                    </tr>
+                    <tr>
+                      <td>XXXX</td>
+                      <td>24C</td>
+                      <td>XXXX</td>                      
+                    </tr>
+                    <tr>
+                      <td>XXXX</td>
+                      <td>24C</td>
+                      <td>XXXX</td>                      
+                    </tr>
+                  </tbody>
+                </table> 
+              </div>
+            </div>
+          </div>
+          <!-- 경유선로 -->
+          <div class="content-info">
+            <div class="sub-title">
+              <h2>경유선로</h2>
+            </div>
+            <div class="content-edit-wrap">
+              <div class="table-wrapper">
+                <table class="jb-table">
+                  <colgroup>
+                    <col style="width: 40%" />
+                    <col style="width: 30%" />
+                    <col style="width: 30%"/>                    
+                  </colgroup>
+                  <thead>
+                    <tr>                                    
+                      <th>선로ID</th>
+                      <th>규격</th>
+                      <th>연결접속점</th>                      
+                    </tr>
+                  </thead>
+                  <tbody class="table-body">
+                    <tr>
+                      <td>XXXX</td>
+                      <td>24C</td>
+                      <td>XXXX</td>                      
+                    </tr>
+                    <tr>
+                      <td>XXXX</td>
+                      <td>24C</td>
+                      <td>XXXX</td>                      
+                    </tr>
+                    <tr>
+                      <td>XXXX</td>
+                      <td>24C</td>
+                      <td>XXXX</td>                      
+                    </tr>
+                    <tr>
+                      <td>XXXX</td>
+                      <td>24C</td>
+                      <td>XXXX</td>                      
+                    </tr>
+                  </tbody>
+                </table> 
+              </div>
+            </div>
+          </div>
+                    <!-- 공가선로 -->
+          <div class="content-info">
+            <div class="sub-title">
+              <h2>공가선로 목록</h2>
+            </div>
+            <div class="content-edit-wrap">
+              <div class="table-wrapper">
+                <table class="jb-table">
+                  <colgroup>
+                    <col style="width: 30%" />
+                    <col style="width: 20%" />
+                    <col style="width: 20%" />
+                    <col style="width: 30%"/>                    
+                  </colgroup>
+                  <thead>
+                    <tr>                                    
+                      <th>선로ID</th>
+                      <th>규격</th>
+                      <th>승인여부</th>
+                      <th>연결접속점</th>                      
+                    </tr>
+                  </thead>
+                  <tbody class="table-body">
+                    <tr>
+                      <td>XXXX</td>
+                      <td>24C</td>
+                      <td>
+                        <!-- 편집 off인 경우는 tb-edit-on 을 hidden 시키고 데이타텍스트만 넣어주시면 됩니다 -->
+                        <div class="tb-edit-on">
+                          <div class="select-wrap">
+                            <select name="" id="">
+                              <option value="">비승인</option>
+                              <option value="">승인</option>                            
+                            </select>
+                          </div>
+                        </div>
+                      </td>
+                      <td>XXXX</td>                      
+                    </tr>
+                    <tr>
+                      <td>XXXX</td>
+                      <td>24C</td>
+                      <td>
+                        <!-- 편집 off인 경우는 tb-edit-on 을 hidden 시키고 데이타텍스트만 넣어주시면 됩니다 -->
+                        <div class="tb-edit-on">
+                          <div class="select-wrap">
+                            <select name="" id="">
+                              <option value="">비승인</option>
+                              <option value="">승인</option>                            
+                            </select>
+                          </div>
+                        </div>
+                      </td>
+                      <td>XXXX</td>                      
+                    </tr>
+                    <tr>
+                      <td>XXXX</td>
+                      <td>24C</td>
+                      <td>
+                        <!-- 편집 off인 경우는 tb-edit-on 을 hidden 시키고 데이타텍스트만 넣어주시면 됩니다 -->
+                        <div class="tb-edit-on">
+                          <div class="select-wrap">
+                            <select name="" id="">
+                              <option value="">비승인</option>
+                              <option value="">승인</option>                            
+                            </select>
+                          </div>
+                        </div>
+                      </td>
+                      <td>XXXX</td>                      
+                    </tr>
+                    <tr>
+                      <td>XXXX</td>
+                      <td>24C</td>
+                      <td>
+                        <!-- 편집 off인 경우는 tb-edit-on 을 hidden 시키고 데이타텍스트만 넣어주시면 됩니다 -->
+                        <div class="tb-edit-on">
+                          <div class="select-wrap">
+                            <select name="" id="">
+                              <option value="">비승인</option>
+                              <option value="">승인</option>                            
+                            </select>
+                          </div>
+                        </div>
+                      </td>
+                      <td>XXXX</td>                      
+                    </tr>
+                  </tbody>
+                </table> 
               </div>
             </div>
           </div>
@@ -439,7 +627,7 @@
                 <p class="line-type01-txt01">함체_1075</p>
 
                 <p class="line-type01-txt02">97_통신선로</p>
-                <div class="line-type01-line01">1번라인</div>
+                <div class="line-type01-line01 line-base">1번라인</div>
 
                 <div class="icon-standard line-type01-map02 active">Icon-함체</div>
                 <p class="line-type01-txt03">함체_1075</p>                           
@@ -452,36 +640,36 @@
                 <p class="line-type02-txt01">함체_1075</p>
 
                 <p class="line-type02-txt02">97_통신선로</p>
-                <div class="line-type02-line01">1번라인</div>  
+                <div class="line-type02-line01 line-base">1번라인</div>  
 
                 <div class="icon-standard line-type02-map02 active">Icon-함체</div>
                 <p class="line-type02-txt03">함체_1075</p>
 
                 <p class="line-type02-txt04">97_통신선로</p>
-                <div class="line-type02-line02">2번라인</div>
+                <div class="line-type02-line02 line-base">2번라인</div>
 
                 <div class="icon-standard line-type02-map03">Icon-함체</div>                          
                 <p class="line-type02-txt05">함체_1075</p>
 
               </div>
               <!--1:2-->
-              <div class="line_conect_con" style="display:none">
+              <div class="line_conect_con" style="display:block">
                 <span>※ 선로를 선택해 주십시오</span>
                 <!--라인-->
                 <div class="icon-standard line-type03-map01">Icon-함체</div>
                 <p class="line-type03-txt01">함체_1075</p>
 
                 <p class="line-type03-txt02">97_통신선로</p>
-                <div class="line-type03-line01">1번라인</div>  
+                <div class="line-type03-line01 line-base">1번라인</div>  
 
                 <div class="icon-standard line-type03-map02 active">Icon-함체</div>
                 <p class="line-type03-txt03">함체_1075</p>
 
                 <p class="line-type03-txt04">97_통신선로</p>
-                <div class="line-type03-line02">2번라인</div>
+                <div class="line-type03-line02 line-base">2번라인</div>
 
-                <div class="line-type03-line03 ">3번라인</div>
                 <p class="line-type03-txt05">함체_1075</p>
+                <div class="line-type03-line03 line-base">3번라인</div>
 
                 <div class="icon-standard line-type03-map03">Icon-함체</div>                          
                 <p class="line-type03-txt06">함체_1075</p>
@@ -500,19 +688,19 @@
                 <p class="line-type04-txt02">함체_1075</p>
 
                 <p class="line-type04-txt03">97_통신선로</p>
-                <div class="line-type04-line01">1번라인</div>  
+                <div class="line-type04-line01 line-base">1번라인</div>  
 
                 <p class="line-type04-txt04">97_통신선로</p>
-                <div class="line-type04-line02">2번라인</div>  
+                <div class="line-type04-line02 line-base">2번라인</div>  
 
                 <div class="icon-standard line-type04-map03 active">Icon-함체</div>
                 <p class="line-type04-txt05">함체_1075</p>
 
                 <p class="line-type04-txt06">97_통신선로</p>
-                <div class="line-type04-line03">3번라인</div>
+                <div class="line-type04-line03 line-base">3번라인</div>
 
                 <p class="line-type04-txt07">97_통신선로</p>
-                <div class="line-type04-line04">4번라인</div>
+                <div class="line-type04-line04 line-base">4번라인</div>
 
                 <div class="icon-standard line-type04-map04">Icon-함체</div>                          
                 <p class="line-type04-txt08">함체_1075</p>
@@ -531,22 +719,22 @@
                 <p class="line-type05-txt02">함체_1075</p>
 
                 <p class="line-type05-txt03">97_통신선로</p>
-                <div class="line-type05-line01">1번라인</div>  
+                <div class="line-type05-line01 line-base">1번라인</div>  
 
                 <p class="line-type05-txt04">97_통신선로</p>
-                <div class="line-type05-line02">2번라인</div>  
+                <div class="line-type05-line02 line-base">2번라인</div>  
 
                 <div class="icon-standard line-type05-map03 active">Icon-함체</div>
                 <p class="line-type05-txt05">함체_1075</p>
 
                 <p class="line-type05-txt06">97_통신선로</p>
-                <div class="line-type05-line03">3번라인</div>
+                <div class="line-type05-line03 line-base">3번라인</div>
 
                 <p class="line-type05-txt07">97_통신선로</p>
-                <div class="line-type05-line04">4번라인</div>
+                <div class="line-type05-line04 line-base">4번라인</div>
                 
                 <p class="line-type05-txt08">97_통신선로</p>
-                <div class="line-type05-line05">5번라인</div>
+                <div class="line-type05-line05 line-base">5번라인</div>
 
                 <div class="icon-standard line-type05-map04">Icon-함체</div>                          
                 <p class="line-type05-txt09">함체_1075</p>
@@ -571,25 +759,25 @@
                 <p class="line-type06-txt03">함체_1075</p>
 
                 <p class="line-type06-txt04">97_통신선로</p>
-                <div class="line-type06-line01">1번라인</div>  
+                <div class="line-type06-line01 line-base">1번라인</div>  
 
                 <p class="line-type06-txt05">97_통신선로</p>
-                <div class="line-type06-line02">4번라인</div>
+                <div class="line-type06-line02 line-base">4번라인</div>
 
                 <p class="line-type06-txt06">97_통신선로</p>
-                <div class="line-type06-line03">2번라인</div>  
+                <div class="line-type06-line03 line-base">2번라인</div>  
 
                 <div class="icon-standard line-type06-map04 active">Icon-함체</div>
                 <p class="line-type06-txt07">함체_1075</p>
 
                 <p class="line-type06-txt08">97_통신선로</p>
-                <div class="line-type06-line04">3번라인</div>
+                <div class="line-type06-line04 line-base">3번라인</div>
 
                 <p class="line-type06-txt09">97_통신선로</p>
-                <div class="line-type06-line05">4번라인</div>
+                <div class="line-type06-line05 line-base">4번라인</div>
                 
                 <p class="line-type06-txt10">97_통신선로</p>
-                <div class="line-type06-line06">5번라인</div>
+                <div class="line-type06-line06 line-base">5번라인</div>
 
                 <div class="icon-standard line-type06-map05">Icon-함체</div>                          
                 <p class="line-type06-txt11">함체_1075</p>
@@ -614,28 +802,28 @@
                 <p class="line-type07-txt03">함체_1075</p>
 
                 <p class="line-type07-txt04">97_통신선로</p>
-                <div class="line-type07-line01">1번라인</div>  
+                <div class="line-type07-line01 line-base">1번라인</div>  
 
                 <p class="line-type07-txt05">97_통신선로</p>
-                <div class="line-type07-line02">2번라인</div>
+                <div class="line-type07-line02 line-base">2번라인</div>
 
                 <p class="line-type07-txt06">97_통신선로</p>
-                <div class="line-type07-line03">3번라인</div>  
+                <div class="line-type07-line03 line-base">3번라인</div>  
 
                 <div class="icon-standard line-type07-map04 active">Icon-함체</div>
                 <p class="line-type07-txt07">함체_1075</p>
 
                 <p class="line-type07-txt08">97_통신선로</p>
-                <div class="line-type07-line04">4번라인</div>
+                <div class="line-type07-line04 line-base">4번라인</div>
 
                 <p class="line-type07-txt09">97_통신선로</p>
-                <div class="line-type07-line05">5번라인</div>
+                <div class="line-type07-line05 line-base">5번라인</div>
 
                 <p class="line-type07-txt10">97_통신선로</p>
-                <div class="line-type07-line06">6번라인</div>
+                <div class="line-type07-line06 line-base">6번라인</div>
                 
                 <p class="line-type07-txt11">97_통신선로</p>
-                <div class="line-type07-line07">7번라인</div>
+                <div class="line-type07-line07 line-base">7번라인</div>
 
                 <div class="icon-standard line-type07-map05">Icon-함체</div>                          
                 <p class="line-type07-txt12">함체_1075</p>
@@ -650,7 +838,7 @@
                 <p class="line-type07-txt15">함체_1075</p>
               </div>
               <!--4:4-->
-              <div class="line_conect_con">
+              <div class="line_conect_con" style="display:none">
                 <span>※ 선로를 선택해 주십시오</span>
                 <!--라인-->
                 <div class="icon-standard line-type08-map01">Icon-함체</div>
@@ -666,31 +854,31 @@
                 <p class="line-type08-txt04">함체_1075</p>
 
                 <p class="line-type08-txt05">97_통신선로</p>
-                <div class="line-type08-line01">1번라인</div>  
+                <div class="line-type08-line01 line-base">1번라인</div>  
 
                 <p class="line-type08-txt06">97_통신선로</p>
-                <div class="line-type08-line02">2번라인</div>
+                <div class="line-type08-line02 line-base">2번라인</div>
 
                 <p class="line-type08-txt07">97_통신선로</p>
-                <div class="line-type08-line03">3번라인</div>
+                <div class="line-type08-line03 line-base">3번라인</div>
 
                 <p class="line-type08-txt08">97_통신선로</p>
-                <div class="line-type08-line04">4번라인</div>  
+                <div class="line-type08-line04 line-base">4번라인</div>  
 
                 <div class="icon-standard line-type08-map05 active">Icon-함체</div>
                 <p class="line-type08-txt09">함체_1075</p>
 
                 <p class="line-type08-txt10">97_통신선로</p>
-                <div class="line-type08-line05">5번라인</div>
+                <div class="line-type08-line05 line-base">5번라인</div>
 
                 <p class="line-type08-txt11">97_통신선로</p>
-                <div class="line-type08-line06">6번라인</div>
+                <div class="line-type08-line06 line-base">6번라인</div>
 
                 <p class="line-type08-txt12">97_통신선로</p>
-                <div class="line-type08-line07">7번라인</div>
+                <div class="line-type08-line07 line-base">7번라인</div>
                 
                 <p class="line-type08-txt13">97_통신선로</p>
-                <div class="line-type08-line08">8번라인</div>
+                <div class="line-type08-line08 line-base">8번라인</div>
 
                 <div class="icon-standard line-type08-map06">Icon-함체</div>                          
                 <p class="line-type08-txt14">함체_1075</p>
@@ -706,7 +894,7 @@
               </div>
             </div>
           </div>
-          <div class="content-info">
+          <div class="content-info sunbun">
             <div class="sub-title">
               <h2>선번장</h2>
               <div class="button-sgroup">                
@@ -714,14 +902,16 @@
               </div>
             </div>
             <div class="content-edit-wrap">
-              <div class="table-wrapper tb-sunbun"> 
-                <div class="tb-line">
+              <div class="table-wrapper tb-sunbun">  
+   
+                <!-- <div class="tb-line">
                   <div class="core-line1"></div>                
                   <div class="core-line2"></div>                
                   <div class="core-line3"></div>                
                   <div class="core-line4"></div>                
                   <div class="core-line5"></div>                
-                </div>               
+                </div>                -->
+                <canvas id="sbCanvas"></canvas>
                 <table class="jb-table">
                   <colgroup>
                     <col width="36px">
@@ -747,6 +937,36 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <tr>
+                      <td><input type="checkbox" id="cid1-1" name="check1" /></td>                      
+                      <td>700_코어_1</td>
+                      <td></td>
+                      <td>699_코어_1</td>
+                    </tr>
+                    <tr>
+                      <td><input type="checkbox" id="cid1-2" name="check1" /></td>
+                      <td>700_코어_1</td>
+                      <td></td>                      
+                      <td>699_코어_1</td>
+                    </tr>
+                    <tr>
+                      <td><input type="checkbox" id="cid1-3" name="check1" /></td>
+                      <td>700_코어_1</td>
+                      <td></td>                      
+                      <td>699_코어_1</td>
+                    </tr>
+                    <tr>
+                      <td><input type="checkbox" id="cid1-4" name="check1" /></td>
+                      <td>700_코어_1</td>
+                      <td></td>                      
+                      <td>699_코어_1</td>
+                    </tr>
+                    <tr>
+                      <td><input type="checkbox" id="cid1-5" name="check1" /></td>
+                      <td>700_코어_1</td>
+                      <td></td>                      
+                      <td>699_코어_1</td>
+                    </tr>
                     <tr>
                       <td><input type="checkbox" id="cid1-1" name="check1" /></td>                      
                       <td>700_코어_1</td>
@@ -1069,19 +1289,104 @@
               </div>
             </div>
           </div>
-        </div>       
+        </div>  
+        <div class="tab-content" id="tab06">
+          <div class="content-info">
+            <div class="sub-title">
+              <h2>기본정보</h2>
+            </div>
+            <div class="content-edit-wrap">
+              <div class="row">
+                <div class="row-title">Ring명</div>
+                <div class="row-content">
+                  <input type="text" value />
+                  <div class="button-sgroup">                
+                    <button class="btn-type03">추가</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <div class="content-info">
+            <div class="sub-title">
+              <h2>RING LIST</h2>
+            </div>
+            <div class="content-edit-wrap">
+              <div class="table-wrapper">
+                <table class="jb-table">
+                  <colgroup>
+                    <col style="width: 40%" />
+                    <col style="width: 40%" />
+                    <col style="width: 20%" />
+                  </colgroup>
+                  <thead>
+                    <tr>                                    
+                      <th>이름</th>
+                      <th>삭제</th>
+                      <th>시설물보기</th>                      
+                    </tr>
+                  </thead>
+                  <tbody class="table-body">
+                    <tr>
+                      <td>3-1</td>
+                      <td>
+                        <div class="f-center">
+                          <button type="button" class="delete-btn">삭제</button>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="f-center">
+                          <button type="button" class="detailview-btn">상세보기</button>
+                        </div>
+                      </td>                      
+                    </tr>
+                    <tr>
+                      <td>3-2</td>
+                      <td>
+                        <div class="f-center">
+                          <button type="button" class="delete-btn">삭제</button>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="f-center">
+                          <button type="button" class="detailview-btn">상세보기</button>
+                        </div>
+                      </td>                      
+                    </tr>
+                    <tr>
+                      <td>3-3</td>
+                      <td>
+                        <div class="f-center">
+                          <button type="button" class="delete-btn">삭제</button>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="f-center">
+                          <button type="button" class="detailview-btn">상세보기</button>
+                        </div>
+                      </td>                      
+                    </tr>
+                  </tbody>
+                </table> 
+              </div>
+            </div>
+          </div>
+        </div>     
       </div>      
+    </div>    
+    <div class="modal-bottom">
       <div class="button-group">
         <button class="btn-white">취소</button>
         <button class="btn-common btn-save">저장</button>
       </div>
-    </div>    
+    </div>
   </div>
   <script src="../scripts/jquery-3.6.0.min.js"></script>
   <script src="../scripts/jquery-ui.min.js"></script>
   <script src="../scripts/script.js"></script>
   <script>
-    loadEvent()
+    loadEvent();
+    
   </script>
 </body>
 </html>

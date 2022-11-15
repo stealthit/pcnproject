@@ -73,7 +73,7 @@ input[type=date] {
 textarea {  
   position: relative;
   width: 100%;
-  min-height: 40px;  
+  min-height: 100px;  
   padding: 3px 8px 4px 10px;
   border-radius: 4px;
   border: solid 1px #dfdfdf;
@@ -81,8 +81,7 @@ textarea {
   font-size: 12px;
   font-weight: normal;
   font-stretch: normal;
-  font-style: normal;
-  line-height: 4.17;
+  font-style: normal;  
   letter-spacing: normal;
   text-align: left;
   color: #111;
@@ -284,7 +283,7 @@ $xy-border: (
 
 // pages
 .modal-top {
-  padding: 0 15px;
+  padding: 15px;
   height: 50px;
   margin-bottom: 14px;
   border-bottom: 2px solid #082e59;
@@ -306,7 +305,7 @@ ul.tab-box {
     font-size: 13px;
     color: #666;
     &.active {
-      font-size: 12px;
+      font-size: 13px;
       border-radius: 16px;
       background-color: #082e59;
       color: #fff;
@@ -325,14 +324,28 @@ ul.tab-box {
   display: block;
 }
 // pages
-.modal-edit {
+.modal-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  .modal-top {    
+    padding: 15px;
+  }
   .modal-body {
+    overflow: overlay;
+    flex: 1;
     .input-box {
+      height: 100%;
       ul.tab-box {}
       .tab-content {
-
+        max-height: calc(100% - 46px);
+        overflow: overlay;
       }
     }
+  }
+  .modal-bottom {
+    height: 76px;
   }
 }
 .content-info {
@@ -399,7 +412,7 @@ ul.tab-box {
 .table-wrapper-2h {
   display: flex;
   gap: 20px;
-  table {flex:1;}
+  .table-inner {flex:1;}
 }
 .tb-connect-wrapper {
   padding: 10px;
@@ -457,10 +470,10 @@ table.jb-table {
       color:#111;
 
       li {
-        &:nth-child(1) {width: 32%;}
-        &:nth-child(2) {width: 26%;}
-        &:nth-child(3) {width: 27%;}
-        &:nth-child(4) {width: 14%;}
+        &:nth-child(1) {width: 44%;}
+        &:nth-child(2) {width: 22%;}
+        &:nth-child(3) {width: 23%;}
+        &:nth-child(4) {width: 10%;}
       }
     }
   }
@@ -474,6 +487,7 @@ table.jb-table {
     border-right: 1px solid #ddd;
   }
   .padding-right-6px {padding-right: 6px;}
+  .padding-left-6px {padding-left: 6px;}
   .th-no-cell {
     border-top-color:#fff;background:#fff;border-bottom-color:#fff;
   }  
@@ -1109,7 +1123,8 @@ button.key-btn{
 }
 // a.btn-input-delete{position:absolute;top:9px;right:10px;}
 .btn-insert{
-  width:56px;height:24px; 
+  // width:56px;
+  height:24px; 
   border-radius: 4px; 
   border: solid 1px #ccc; 
   background: #fff url(../assets/ic_bt_insert@2x.png) no-repeat 8px center; 
@@ -1159,6 +1174,9 @@ a.btn-insert{
 
 .line-elcore{border-style:solid;border-color:#000000 !important;}
 .line-elcore_n{border-style: dashed;color:#000000 !important}
+
+.line-rentcore{border-style:solid;border-color:#a2a2a2 !important;}
+.line-rentcore_n{border-style: dashed;color:#a2a2a2 !important}
 
 .line-holecore{border-style:solid;border-color:#1717fb !important;}
 
@@ -1240,6 +1258,9 @@ a.btn-insert{
 /* line 1*/
 p[class^='line-type0']{font-size:12px;color:#111;text-align:center}
 
+.line-base {cursor: pointer; height: 2px; background-color:#666;}
+.line-blue {height: 4px !important; background-color: #1717fb !important;}
+.line-orange {height: 4px !important; background-color: #ff5500 !important;}
 
 .line-type01-map01{top:calc(50% - 10px); left:calc(50% - 224px);}
 .line-type01-map02{top:calc(50% - 10px); left:calc(50% - 10px);} /*중심아이콘*/
@@ -1250,7 +1271,7 @@ p[class^='line-type0']{font-size:12px;color:#111;text-align:center}
 .line-type01-txt03{top:calc(50% + 10px); left:calc(50% - 50px);  width:100px;}
 
 .line-type01-line01{top:calc(50% - 2px); left:calc(50% - 206px);
-  width: 196px; height: 4px; background-color:#1717fb; font-size:0;}
+  width: 196px; height: 2px; background-color:#666; font-size:0;}
 
 /* line 2*/  
 
@@ -1266,11 +1287,11 @@ p[class^='line-type0']{font-size:12px;color:#111;text-align:center}
 .line-type02-txt05{top:calc(50% + 10px); left:calc(50% + 164px);  width:100px;}
 
 .line-type02-line01{top:calc(50% - 2px); left:calc(50% - 206px);
-  width: 196px; height: 4px; background-color:#1717fb; font-size:0;}
+  width: 196px; height: 2px; background-color:#666; font-size:0;}
 
 .line-type02-line02{top:calc(50% - 2px); left:calc(50% + 10px);
-  width: 196px; height: 4px;
-  background-color: #ff5500; font-size:0;}
+  width: 196px; height: 2px;
+  background-color: #666; font-size:0;}
 
 
 /* line 3*/
@@ -1290,16 +1311,15 @@ p[class^='line-type0']{font-size:12px;color:#111;text-align:center}
 .line-type03-txt07{top:calc(50% + 66px); left:calc(50% + 164px); width:100px;}
 
 .line-type03-line01{top:calc(50% - 2px); left:calc(50% - 206px);
-   width: 196px; height: 4px; background-color:#1717fb; font-size:0;}
+   width: 196px; height: 2px; background-color:#666; font-size:0;}
 
 .line-type03-line02{top:calc(50% - 28px); left:calc(50% + 6px);
-   width: 200px; height: 4px;
-   transform: rotate(-15deg); background-color: #ff5500; font-size:0;}
+   width: 200px; height: 2px;
+   transform: rotate(-15deg); background-color: #666; font-size:0;}
 
 .line-type03-line03{top:calc(50% + 26px); left:calc(50% + 6px);
    width: 200px; height: 2px;;
    transform: rotate(15deg); background-color:#666; font-size:0;}
-
 
 
 /* line 4*/
@@ -1331,16 +1351,16 @@ p[class^='line-type0']{font-size:12px;color:#111;text-align:center}
 
 
 .line-type04-line01{top:calc(50% - 28px); left:calc(50% - 206px);
-   width: 200px; height: 4px; 
-   transform: rotate(15deg);background-color:#1717fb; font-size:0;}
+   width: 200px; height: 2px; 
+   transform: rotate(15deg);background-color:#666; font-size:0;}
 
 .line-type04-line02{top:calc(50% + 26px);left:calc(50% - 206px);
   width: 200px; height: 2px;;
   transform: rotate(-15deg); background-color:#666; font-size:0;}   
 
 .line-type04-line03{top:calc(50% - 28px); left:calc(50% + 6px);
-  width: 200px; height: 4px;
-  transform: rotate(-15deg); background-color: #ff5500; font-size:0;}
+  width: 200px; height: 2px;
+  transform: rotate(-15deg); background-color: #666; font-size:0;}
 
 .line-type04-line04{top:calc(50% + 26px); left:calc(50% + 6px);
   width: 200px; height: 2px;;
@@ -1380,16 +1400,16 @@ p[class^='line-type0']{font-size:12px;color:#111;text-align:center}
 
 
 .line-type05-line01{top:calc(50% - 28px); left:calc(50% - 206px);
-   width: 200px; height: 4px; 
-   transform: rotate(15deg);background-color:#1717fb; font-size:0;}
+   width: 200px; height: 2px; 
+   transform: rotate(15deg);background-color:#666; font-size:0;}
 
 .line-type05-line02{top:calc(50% + 26px);left:calc(50% - 206px);
   width: 200px; height: 2px;;
   transform: rotate(-15deg); background-color:#666; font-size:0;}   
 
 .line-type05-line03{top:calc(50% - 28px); left:calc(50% + 6px);
-  width: 200px; height: 4px;
-  transform: rotate(-15deg); background-color: #ff5500; font-size:0;}
+  width: 200px; height: 2px;
+  transform: rotate(-15deg); background-color: #666; font-size:0;}
 
 .line-type05-line04{top:calc(50%);left:calc(50% + 10px);
    width: 190px; height: 2px;;
@@ -1433,11 +1453,11 @@ p[class^='line-type0']{font-size:12px;color:#111;text-align:center}
 
 
 .line-type06-line01{top:calc(50% - 28px); left:calc(50% - 206px);
-   width: 200px; height: 4px; 
-   transform: rotate(15deg);background-color:#1717fb; font-size:0;}
+   width: 200px; height: 2px; 
+   transform: rotate(15deg);background-color:#666; font-size:0;}
 
 .line-type06-line02{top:calc(50%);left:calc(50% - 202px);
-  width: 190px; height: 2px;;
+  width: 190px; height: 2px;
   background-color:#666; font-size:0;}   
 
 .line-type06-line03{top:calc(50% + 26px);left:calc(50% - 206px);
@@ -1445,8 +1465,8 @@ p[class^='line-type0']{font-size:12px;color:#111;text-align:center}
   transform: rotate(-15deg); background-color:#666; font-size:0;}   
 
 .line-type06-line04{top:calc(50% - 28px); left:calc(50% + 6px);
-  width: 200px; height: 4px;
-  transform: rotate(-15deg); background-color: #ff5500; font-size:0;}
+  width: 200px; height: 2px;
+  transform: rotate(-15deg); background-color: #666; font-size:0;}
 
 .line-type06-line05{top:calc(50%);left:calc(50% + 10px);
    width: 190px; height: 2px;;
@@ -1491,8 +1511,8 @@ p[class^='line-type0']{font-size:12px;color:#111;text-align:center}
 .line-type07-txt15{top:calc(50% + 82px); left:calc(50% + 164px); width:100px;}
 
 .line-type07-line01{top:calc(50% - 28px); left:calc(50% - 206px);
-  width: 200px; height: 4px; 
-  transform: rotate(15deg);background-color:#1717fb; font-size:0;}
+  width: 200px; height: 2px; 
+  transform: rotate(15deg);background-color:#666; font-size:0;}
 
 .line-type07-line02{top:calc(50%);left:calc(50% - 202px);
  width: 190px; height: 2px;;
@@ -1503,8 +1523,8 @@ p[class^='line-type0']{font-size:12px;color:#111;text-align:center}
  transform: rotate(-15deg); background-color:#666; font-size:0;}   
 
 .line-type07-line04{top:calc(50% - 38px);left:calc(50% + 4px);
-   width: 205px; height: 4px;
-   transform: rotate(-20deg); background-color: #ff5500; font-size:0;}
+   width: 205px; height: 2px;
+   transform: rotate(-20deg); background-color: #666; font-size:0;}
 
 .line-type07-line05{top:calc(50% - 12px);left:calc(50% + 8px);
    width: 195px; height: 2px;;
@@ -1562,8 +1582,8 @@ p[class^='line-type0']{font-size:12px;color:#111;text-align:center}
 
 
 .line-type08-line01{top:calc(50% - 36px); left:calc(50% - 208px);
-   width: 205px; height: 4px; 
-   transform: rotate(20deg);background-color:#1717fb; font-size:0;}
+   width: 205px; height: 2px; 
+   transform: rotate(20deg);background-color:#666; font-size:0;}
 
 .line-type08-line02{top:calc(50% - 12px);left:calc(50% - 200px);
   width: 195px; height: 2px;
@@ -1579,8 +1599,8 @@ p[class^='line-type0']{font-size:12px;color:#111;text-align:center}
 
 
 .line-type08-line05{top:calc(50% - 36px);left:calc(50% + 4px);
-  width: 205px; height: 4px;
-  transform: rotate(-20deg); background-color: #ff5500; font-size:0;}
+  width: 205px; height: 2px;
+  transform: rotate(-20deg); background-color: #666; font-size:0;}
 
 .line-type08-line06{top:calc(50% - 12px);left:calc(50% + 8px);
   width: 195px; height: 2px;
@@ -1609,4 +1629,62 @@ span.bit_port_d{background:#818181}
 .map_detail_rect_stdard li{height:40px; font-size:14px; color:#111;border-bottom:1px solid #ddd;padding-left:20px;align-items: center;display: flex;cursor: pointer;}
 .map_detail_rect_stdard li:last-child{border-bottom:0}
 
+
+// icon 정리
+@include icon_images(icon-1-c-t);
+@include icon_images(icon-2-n-g);
+@include icon_images(icon-2-n-r);
+@include icon_images(icon-2-n-t);
+@include icon_images(icon-3-cb-t);
+@include icon_images(icon-4-ke-t);
+@include icon_images(icon-5-tr-t);
+@include icon_images(icon-6-ip-t);
+@include icon_images(icon-7-co-t);
+@include icon_images(icon-8-mh-t);
+@include icon_images(icon-9-me-t);
+@include icon_images(icon-10-m-g);
+@include icon_images(icon-10-m-r);
+@include icon_images(icon-10-m-t);
+@include icon_images(icon-11-t-g);
+@include icon_images(icon-11-t-r);
+@include icon_images(icon-11-t-t);
+@include icon_images(icon-12-ct-g);
+@include icon_images(icon-12-ct-r);
+@include icon_images(icon-12-ct-t);
+@include icon_images(icon-13-vd-g);
+@include icon_images(icon-13-vd-r);
+@include icon_images(icon-13-vd-t);
+@include icon_images(icon-14-dr-g);
+@include icon_images(icon-14-dr-r);
+@include icon_images(icon-14-dr-t);
+@include icon_images(icon-15-tm-g);
+@include icon_images(icon-15-tm-r);
+@include icon_images(icon-15-tm-t);
+@include icon_images(icon-16-vm-g);
+@include icon_images(icon-16-vm-r);
+@include icon_images(icon-16-vm-t);
+@include icon_images(icon-17-av-g);
+@include icon_images(icon-17-av-r);
+@include icon_images(icon-17-av-t);
+@include icon_images(icon-18-vl-g);
+@include icon_images(icon-18-vl-r);
+@include icon_images(icon-18-vl-t);
+@include icon_images(icon-19-md-g);
+@include icon_images(icon-19-md-r);
+@include icon_images(icon-19-md-t);
+@include icon_images(icon-20-wd-g);
+@include icon_images(icon-20-wd-r);
+@include icon_images(icon-20-wd-t);
+@include icon_images(icon-21-rk-g);
+@include icon_images(icon-21-rk-r);
+@include icon_images(icon-21-rk-t);
+@include icon_images(icon-22-rk-g);
+@include icon_images(icon-22-rk-r);
+@include icon_images(icon-22-rk-t);
+@include icon_images(icon-23-b-g);
+@include icon_images(icon-23-b-r);
+@include icon_images(icon-23-b-t);
+@include icon_images(icon-24-t-g);
+@include icon_images(icon-24-t-r);
+@include icon_images(icon-24-t-t);
 

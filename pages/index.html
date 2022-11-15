@@ -124,7 +124,7 @@
     <div id="right-area">
       <div class="right-area-box toolbox">
         <!-- 입력->관련자료->등록 (UI_04_0006_1)-->
-        <div class="modal-register">
+        <div class="modal-register modal-wrap">
           <div class="modal-top">
             <div class="box-title">등록</div>
             <div class="ic-modal-close close"></div>
@@ -178,13 +178,15 @@
               </div>
             </div> 
           </div>
-          <div class="button-group">
-            <button class="btn-white">취소</button>
-            <button class="btn-common btn-save">저장</button>
+          <div class="modal-bottom">
+            <div class="button-group">
+              <button class="btn-white">취소</button>
+              <button class="btn-common btn-save">저장</button>
+            </div>
           </div>
         </div>
         <!-- 입력->연결하기 (UI_04_0007_1)-->
-        <div class="modal-connect">
+        <div class="modal-connect modal-wrap">
           <div class="modal-top">
             <div class="box-title">연결하기</div>
             <div class="ic-modal-close close"></div>
@@ -198,20 +200,20 @@
                 <div class="table-wrapper tb-connect-wrapper">
                   <table class="jb-table tb-connect-box">
                     <colgroup>
-                      <col style="width: 8.5%" />
-                      <col style="width: 7%" />
-                      <col style="width: 7%" />
-                      <col style="width: 4%" />                        
+                      <col style="width: 11.5%" />
+                      <col style="width: 6%" />
+                      <col style="width: 6%" />
+                      <col style="width: 3%" />                        
+                      <col style="width: 7.5%" />
                       <col style="width: 8%" />
-                      <col style="width: 4%" />
-                      <col style="width: 4%" />
-                      <col style="width: 4%" />
-                      <col style="width: 3%" />
-                      <col style="width: 8%" />                        
-                      <col style="width: 8.5%" />
-                      <col style="width: 7%" />
-                      <col style="width: 7%" />
-                      <col style="width: 4%" />
+                      <col style="width: 8%" />
+                      <col style="width: 8%" />
+                      <col style="width: 8%" />
+                      <col style="width: 7.5%" />                        
+                      <col style="width: 11.5%" />
+                      <col style="width: 6%" />
+                      <col style="width: 6%" />
+                      <col style="width: 3%" />   
                     </colgroup>
                     <thead>
                       <tr>
@@ -224,17 +226,17 @@
                     .coreel_bgc{background-color:#000000}
                     .corehole_bgc{background-color:#007aba}
                     -->
-                        <th colspan="4" class="line-bottom line-top"><span class="cores_bgc"></span>선택 선로 ID : 97_통신선로</th>                          
+                        <th colspan="5" class="line-bottom line-top"><span class="cores_bgc"></span>선택 선로 ID : 97_통신선로</th>                          
                         <th rowspan="2" class="th-no-cell">&nbsp;</th>
-                        <th colspan="4" class="line-bottom line-top">RING 정보</th>
+                        <th colspan="2" class="line-bottom line-top">RING 정보</th>
                         <th rowspan="2" class="th-no-cell">&nbsp;</th>                          
-                        <th colspan="4" class="line-bottom line-top"><span class="cores01_bgc"></span>선택 선로 ID : 97_통신선로</th>
+                        <th colspan="5" class="line-bottom line-top"><span class="cores01_bgc"></span>선택 선로 ID : 97_통신선로</th>
                       </tr>
                       <tr>
                         <th class="line-bottom">선로ID</th>
                         <th class="line-bottom">규격</th>
-                        <th class="line-bottom">인입선번</th>   
-                        <th class="line-bottom">&nbsp;</th>     
+                        <th class="line-bottom" colspan="2">인입선번</th>   
+                        <!-- <th class="line-bottom">&nbsp;</th>      -->
 
                         <th class="line-bottom">RT인입</th>
                         <th class="line-bottom">NODE</th>
@@ -243,22 +245,21 @@
 
                         <th class="line-bottom">선로ID</th>
                         <th class="line-bottom">규격</th>
-                        <th class="line-bottom">인입선번</th>    
-                        <th class="line-bottom">&nbsp;</th>                      
+                        <th class="line-bottom" colspan="2">인입선번</th>    
+                        <!-- <th class="line-bottom">&nbsp;</th>                       -->
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td colspan="4">
                           <ul class="connect-cell">
-                            <li>0</li>
+                            <li>1523_코어_12</li>
                             <li>24c</li>
                             <li>1</li>
                             <li><a href="#" class="btn-input-delete">삭제</a></li>
                           </ul>
-                        </td>
-                        <td><div class="connect-line-dash">라인</div></td>
-                        <td class="padding-right-6px">
+                        </td>                        
+                        <td class="padding-left-6px">
                           <div class="select-wrap tb-select">
                             <select name="" id="">
                               <option value="">N</option>
@@ -266,14 +267,7 @@
                             </select>
                           </div>
                         </td>
-                        <td class="padding-right-6px">
-                          <div class="select-wrap">
-                            <select name="" id="">
-                              <option value="">NODE선택</option>
-                              <option value="">직접입력</option>
-                            </select>
-                          </div>
-                        </td>
+                        <td><div class="connect-line-dash">라인</div></td>
                         <td class="padding-right-6px">
                           <div class="select-wrap">
                             <select name="" id="">
@@ -283,17 +277,25 @@
                           </div>
                         </td>
                         <td>
+                          <div class="select-wrap">
+                            <select name="" id="">
+                              <option value="">NODE선택</option>
+                              <option value="">직접입력</option>
+                            </select>
+                          </div>
+                        </td>
+                        <td><div class="connect-line-dash">라인</div></td>
+                        <td>
                           <div class="select-wrap tb-select">
                             <select name="" id="">
                               <option value="">N</option>
                               <option value="">Y</option>
                             </select>
                           </div>
-                        </td>
-                        <td><div class="connect-line-dash">라인</div></td>
+                        </td>                        
                         <td colspan="4">
                           <ul class="connect-cell">
-                            <li>0</li>
+                            <li>1523_코어_12</li>
                             <li>24c</li>
                             <li>1</li>
                             <li><a href="#" class="btn-input-delete">삭제</a></li>
@@ -308,9 +310,8 @@
                             <li>1</li>
                             <li><a href="#" class="btn-input-delete">삭제</a></li>
                           </ul>
-                        </td>
-                        <td><div class="connect-line-dash">라인</div></td>
-                        <td class="padding-right-6px">
+                        </td>                        
+                        <td class="padding-left-6px">
                           <div class="select-wrap tb-select">
                             <select name="" id="">
                               <option value="">N</option>
@@ -318,14 +319,7 @@
                             </select>
                           </div>
                         </td>
-                        <td class="padding-right-6px">
-                          <div class="select-wrap">
-                            <select name="" id="">
-                              <option value="">NODE3</option>
-                              <option value="">직접입력</option>
-                            </select>
-                          </div>
-                        </td>
+                        <td><div class="connect-line-dash">라인</div></td>
                         <td class="padding-right-6px">
                           <div class="select-wrap">
                             <select name="" id="">
@@ -335,42 +329,6 @@
                           </div>
                         </td>
                         <td>
-                          <div class="select-wrap tb-select">
-                            <select name="" id="">
-                              <option value="">N</option>
-                              <option value="">Y</option>
-                            </select>
-                          </div>
-                        </td>
-                        <td><div class="connect-line-dash">라인</div></td>
-                        <td colspan="4">
-                          <ul class="connect-cell">
-                            <li>0</li>
-                            <li>24c</li>
-                            <li>1</li>
-                            <li><a href="#" class="btn-input-delete">삭제</a></li>
-                          </ul>
-                        </td>
-                      </tr>   
-                      <tr>
-                        <td colspan="4">
-                          <ul class="connect-cell">
-                            <li>0</li>
-                            <li>24c</li>
-                            <li>1</li>
-                            <li><a href="#" class="btn-input-delete">삭제</a></li>
-                          </ul>
-                        </td>
-                        <td><div class="connect-line-dash">라인</div></td>
-                        <td class="padding-right-6px">
-                          <div class="select-wrap tb-select">
-                            <select name="" id="">
-                              <option value="">N</option>
-                              <option value="">Y</option>
-                            </select>
-                          </div>
-                        </td>
-                        <td class="padding-right-6px">
                           <div class="select-wrap">
                             <select name="" id="">
                               <option value="">NODE3</option>
@@ -378,56 +336,7 @@
                             </select>
                           </div>
                         </td>
-                        <td class="padding-right-6px">
-                          <div class="select-wrap">
-                            <select name="" id="">
-                              <option value="">3-1</option>
-                              <option value="">직접입력</option>
-                            </select>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="select-wrap tb-select">
-                            <select name="" id="">
-                              <option value="">N</option>
-                              <option value="">Y</option>
-                            </select>
-                          </div>
-                        </td>
                         <td><div class="connect-line-dash">라인</div></td>
-                        <td colspan="4">
-                          <ul class="connect-cell">
-                            <li>0</li>
-                            <li>24c</li>
-                            <li>1</li>
-                            <li><a href="#" class="btn-input-delete">삭제</a></li>
-                          </ul>
-                        </td>
-                      </tr>   
-                      <tr>
-                        <td colspan="4">
-                          <ul class="connect-cell">
-                            <li>0</li>
-                            <li>24c</li>
-                            <li>1</li>
-                            <li><a href="#" class="btn-input-delete">삭제</a></li>
-                          </ul>
-                        </td>
-                        <td><div class="connect-line-dash">라인</div></td>
-                        <td class="padding-right-6px">
-                          <div class="select-wrap tb-select">
-                            <select name="" id="">
-                              <option value="">N</option>
-                              <option value="">Y</option>
-                            </select>
-                          </div>
-                        </td>
-                        <td class="padding-right-6px">
-                          <div class="node-error">! NODE 2</div>
-                        </td>
-                        <td class="padding-right-6px">
-                          <div class="node-error">! NODE 2-1</div>
-                        </td>
                         <td>
                           <div class="select-wrap tb-select">
                             <select name="" id="">
@@ -436,7 +345,100 @@
                             </select>
                           </div>
                         </td>                        
+                        <td colspan="4">
+                          <ul class="connect-cell">
+                            <li>0</li>
+                            <li>24c</li>
+                            <li>1</li>
+                            <li><a href="#" class="btn-input-delete">삭제</a></li>
+                          </ul>
+                        </td>
+                      </tr>   
+                      <tr>
+                        <td colspan="4">
+                          <ul class="connect-cell">
+                            <li>0</li>
+                            <li>24c</li>
+                            <li>1</li>
+                            <li><a href="#" class="btn-input-delete">삭제</a></li>
+                          </ul>
+                        </td>                        
+                        <td class="padding-left-6px">
+                          <div class="select-wrap tb-select">
+                            <select name="" id="">
+                              <option value="">N</option>
+                              <option value="">Y</option>
+                            </select>
+                          </div>
+                        </td>
                         <td><div class="connect-line-dash">라인</div></td>
+                        <td class="padding-right-6px">
+                          <div class="select-wrap">
+                            <select name="" id="">
+                              <option value="">NODE3</option>
+                              <option value="">직접입력</option>
+                            </select>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="select-wrap">
+                            <select name="" id="">
+                              <option value="">3-1</option>
+                              <option value="">직접입력</option>
+                            </select>
+                          </div>
+                        </td>
+                        <td><div class="connect-line-dash">라인</div></td>
+                        <td>
+                          <div class="select-wrap tb-select">
+                            <select name="" id="">
+                              <option value="">N</option>
+                              <option value="">Y</option>
+                            </select>
+                          </div>
+                        </td>                        
+                        <td colspan="4">
+                          <ul class="connect-cell">
+                            <li>0</li>
+                            <li>24c</li>
+                            <li>1</li>
+                            <li><a href="#" class="btn-input-delete">삭제</a></li>
+                          </ul>
+                        </td>
+                      </tr>   
+                      <tr>
+                        <td colspan="4">
+                          <ul class="connect-cell">
+                            <li>0</li>
+                            <li>24c</li>
+                            <li>1</li>
+                            <li><a href="#" class="btn-input-delete">삭제</a></li>
+                          </ul>
+                        </td>                        
+                        <td class="padding-left-6px">
+                          <div class="select-wrap tb-select">
+                            <select name="" id="">
+                              <option value="">N</option>
+                              <option value="">Y</option>
+                            </select>
+                          </div>
+                        </td>
+                        <td><div class="connect-line-dash">라인</div></td>
+                        <td class="padding-right-6px">
+                          <div class="node-error">! NODE 2</div>
+                        </td>
+                        <td>
+                          <div class="node-error">! NODE 2-1</div>
+                        </td>
+                        <td><div class="connect-line-dash">라인</div></td>
+                        <td>
+                          <div class="select-wrap tb-select">
+                            <select name="" id="">
+                              <option value="">N</option>
+                              <option value="">Y</option>
+                            </select>
+                          </div>
+                        </td>                                                
                         <td colspan="4">
                           <ul class="connect-cell">
                             <li>0</li>
@@ -455,119 +457,123 @@
                   <button class="btn-common">저장</button>
                 </div>   
                 <div class="table-wrapper-2h">
-                  <table class="jb-table">
-                    <colgroup>
-                      <col width="20%" />
-                      <col width="20%" />
-                      <col width="20%" />
-                      <col width="*" />
-                      <col width="20%" />
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <!--색상코드는 라인별로-->
-                        <!--
-                    .core4_bgc / .core12_bgc {background-color:#ff6c00}
-                    .core24_bgc / .core36_bgc / .core48_bgc{background-color:#a619ff}
-                    .core72_bgc / .core96_bgc{background-color:#14a419}
-                    .core144_bgc / .core288_bgc{background-color:#ff0000}
-                    .coreel_bgc{background-color:#000000}
-                    .corehole_bgc{background-color:#007aba}
-                    -->
-                        <th colspan="5" class="line-bottom"><span class="cores_bgc"></span>선택선로 ID:97_통신선로</th>
-                      </tr>
-                      <tr>
-                        <th>선로ID</th>
-                        <th>규격</th>
-                        <th>인입선번</th>
-                        <th>RING 정보</th>
-                        <th>연결박스</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>0</td>
-                        <td>24C</td>
-                        <td>1</td>
-                        <td>-</td>
-                        <td><a class="btn-insert">삽입</a></td>
-                      </tr>
-                      <tr>
-                        <td>0</td>
-                        <td>24C</td>
-                        <td>1</td>
-                        <td>-</td>
-                        <td><a class="btn-insert">삽입</a></td>
-                      </tr>
-                      <tr>
-                        <td>0</td>
-                        <td>24C</td>
-                        <td>1</td>
-                        <td>-</td>
-                        <td><a class="btn-insert">삽입</a></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <table class="jb-table">
-                    <colgroup>
-                      <col width="20%" />
-                      <col width="20%" />
-                      <col width="20%" />
-                      <col width="*" />
-                      <col width="20%" />
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <!--색상코드는 라인별로-->
-                        <!--
-                    .core4_bgc / .core12_bgc {background-color:#ff6c00}
-                    .core24_bgc / .core36_bgc / .core48_bgc{background-color:#a619ff}
-                    .core72_bgc / .core96_bgc{background-color:#14a419}
-                    .core144_bgc / .core288_bgc{background-color:#ff0000}
-                    .coreel_bgc{background-color:#000000}
-                    .corehole_bgc{background-color:#007aba}
-                    -->
-                        <th colspan="5" class="line-bottom"><span class="cores01_bgc"></span>선택선로 ID:97_통신선로</th>
-                      </tr>
-                      <tr>
-                        <th>선로ID</th>
-                        <th>규격</th>
-                        <th>인입선번</th>
-                        <th>RING 정보</th>
-                        <th>연결박스</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>0</td>
-                        <td>24C</td>
-                        <td>1</td>
-                        <td>-</td>
-                        <td><a class="btn-insert">삽입</a></td>
-                      </tr>
-                      <tr>
-                        <td>0</td>
-                        <td>24C</td>
-                        <td>1</td>
-                        <td>-</td>
-                        <td><a class="btn-insert">삽입</a></td>
-                      </tr>
-                      <tr>
-                        <td>0</td>
-                        <td>24C</td>
-                        <td>1</td>
-                        <td>-</td>
-                        <td><a class="btn-insert">삽입</a></td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <div class="table-inner">
+                    <table class="jb-table">
+                      <colgroup>
+                        <col width="20%" />
+                        <col width="20%" />
+                        <col width="20%" />
+                        <col width="*" />
+                        <col width="20%" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <!--색상코드는 라인별로-->
+                          <!--
+                      .core4_bgc / .core12_bgc {background-color:#ff6c00}
+                      .core24_bgc / .core36_bgc / .core48_bgc{background-color:#a619ff}
+                      .core72_bgc / .core96_bgc{background-color:#14a419}
+                      .core144_bgc / .core288_bgc{background-color:#ff0000}
+                      .coreel_bgc{background-color:#000000}
+                      .corehole_bgc{background-color:#007aba}
+                      -->
+                          <th colspan="5" class="line-bottom"><span class="cores_bgc"></span>선택선로 ID:97_통신선로</th>
+                        </tr>
+                        <tr>
+                          <th>선로ID</th>
+                          <th>규격</th>
+                          <th>인입선번</th>
+                          <th>RING 정보</th>
+                          <th>연결박스</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>0</td>
+                          <td>24C</td>
+                          <td>1</td>
+                          <td>-</td>
+                          <td><a class="btn-insert">연결완료</a></td>
+                        </tr>
+                        <tr>
+                          <td>0</td>
+                          <td>24C</td>
+                          <td>1</td>
+                          <td>-</td>
+                          <td><a class="btn-insert">삽입</a></td>
+                        </tr>
+                        <tr>
+                          <td>0</td>
+                          <td>24C</td>
+                          <td>1</td>
+                          <td>-</td>
+                          <td><a class="btn-insert">삽입</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="table-inner">
+                    <table class="jb-table">
+                      <colgroup>
+                        <col width="20%" />
+                        <col width="20%" />
+                        <col width="20%" />
+                        <col width="*" />
+                        <col width="20%" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <!--색상코드는 라인별로-->
+                          <!--
+                      .core4_bgc / .core12_bgc {background-color:#ff6c00}
+                      .core24_bgc / .core36_bgc / .core48_bgc{background-color:#a619ff}
+                      .core72_bgc / .core96_bgc{background-color:#14a419}
+                      .core144_bgc / .core288_bgc{background-color:#ff0000}
+                      .coreel_bgc{background-color:#000000}
+                      .corehole_bgc{background-color:#007aba}
+                      -->
+                          <th colspan="5" class="line-bottom"><span class="cores01_bgc"></span>선택선로 ID:97_통신선로</th>
+                        </tr>
+                        <tr>
+                          <th>선로ID</th>
+                          <th>규격</th>
+                          <th>인입선번</th>
+                          <th>RING 정보</th>
+                          <th>연결박스</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>0</td>
+                          <td>24C</td>
+                          <td>1</td>
+                          <td>-</td>
+                          <td><a class="btn-insert">삽입</a></td>
+                        </tr>
+                        <tr>
+                          <td>0</td>
+                          <td>24C</td>
+                          <td>1</td>
+                          <td>-</td>
+                          <td><a class="btn-insert">삽입</a></td>
+                        </tr>
+                        <tr>
+                          <td>0</td>
+                          <td>24C</td>
+                          <td>1</td>
+                          <td>-</td>
+                          <td><a class="btn-insert">삽입</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>             
               </div>
             </div> 
           </div>          
         </div>
         <!-- 사업관리->등록 (UI_11_0002)-->
-        <div class="modal-busi-register">
+        <div class="modal-busi-register modal-wrap">
           <div class="modal-top">
             <div class="box-title">등록</div>
             <div class="ic-modal-close close"></div>
@@ -671,13 +677,15 @@
               </div>
             </div> 
           </div>
-          <div class="button-group">
-            <button class="btn-white">취소</button>
-            <button class="btn-common btn-save">저장</button>
+          <div class="modal-bottom">
+            <div class="button-group">
+              <button class="btn-white">취소</button>
+              <button class="btn-common btn-save">저장</button>
+            </div>
           </div>
         </div>
         <!-- 환경설정->수정 (UI_12_0005)-->
-        <div class="modal-user-m">
+        <div class="modal-user-m modal-wrap">
           <div class="modal-top">
             <div class="box-title">사용자수정</div>
             <div class="ic-modal-close close"></div>
@@ -712,7 +720,7 @@
           </div>
         </div>
         <!-- 환경설정->변경 (UI_12_0006)-->
-        <div class="modal-pass-m">
+        <div class="modal-pass-m modal-wrap">
           <div class="modal-top">
             <div class="box-title">비밀번호 변경</div>
             <div class="ic-modal-close close"></div>
@@ -747,7 +755,7 @@
           </div>
         </div>
         <!-- 환경설정->변경 (UI_12_0007)-->
-        <div class="modal-user-a">
+        <div class="modal-user-a modal-wrap">
           <div class="modal-top">
             <div class="box-title">회원추가</div>
             <div class="ic-modal-close close"></div>
@@ -788,7 +796,7 @@
           </div>
         </div>
         <!-- 입력->(UI_04_0002) : 함체상세정보-->
-        <div class="modal-input-standard">
+        <div class="modal-input-standard modal-wrap">
           <div class="modal-top">
             <div class="box-title">함체상세정보</div>
             <div class="ic-modal-close close"></div>
@@ -820,7 +828,7 @@
           </div>
         </div>
         <!-- 선번장->보기 (UI_09_0002)-->
-        <div class="modal-sunView">
+        <div class="modal-sunView modal-wrap">
           <div class="modal-top">
             <div class="box-title">선번장 보기</div>
             <div class="ic-modal-close close"></div>
@@ -833,51 +841,59 @@
               <div class="content-edit-wrap">
                 <div class="node-point-wrap">
                   <div class="node-point">
-                    <div class="node-point-title">Node3</div>
+                    <div class="node-point-title">정선국토관리사무소</div>
                     <div class="node-point-circle"></div>
                     <div class="node-point-info">
                       <div class="node-point-line"></div>
-                      <div class="node-point-text">703_코어_3</div>
+                      <div class="node-point-text">17578_코어_100</div>
                     </div>
                   </div>
                   <div class="node-point">
-                    <div class="node-point-title"></div>
+                    <div class="node-point-title">합강정휴게소~인제IC교차로_SKT 관로-11</div>
                     <div class="node-point-circle"></div>
                     <div class="node-point-info">
                       <div class="node-point-line"></div>
-                      <div class="node-point-text">703_코어_3</div>
+                      <div class="node-point-text">1757_코어_9</div>
                     </div>
                   </div>
                   <div class="node-point">
-                    <div class="node-point-title">CCTV DO1</div>
+                    <div class="node-point-title">덕송교차로~정선국토_F3</div>
                     <div class="node-point-circle"></div>
                     <div class="node-point-info">
                       <div class="node-point-line"></div>
-                      <div class="node-point-text">703_코어_3</div>
+                      <div class="node-point-text">1756_코어_9</div>
                     </div>
                   </div>
                   <div class="node-point">
-                    <div class="node-point-title"></div>
+                    <div class="node-point-title">덕송교차로~정선국토_F2</div>
                     <div class="node-point-circle"></div>                    
                     <div class="node-point-info">
                       <div class="node-point-line"></div>
-                      <div class="node-point-text">703_코어_3</div>
+                      <div class="node-point-text">1758_코어_9</div>
                     </div>
                   </div>
                   <div class="node-point">
-                    <div class="node-point-title">BIT_1234</div>
+                    <div class="node-point-title">덕송교차로~정선국토_F1</div>
                     <div class="node-point-circle"></div>                    
                     <div class="node-point-info">
                       <div class="node-point-line"></div>
-                      <div class="node-point-text">703_코어_3</div>
+                      <div class="node-point-text">1761_코어_9</div>
                     </div>
                   </div>
                   <div class="node-point">
-                    <div class="node-point-title"></div>
+                    <div class="node-point-title">노론리~덕송교차로_F4</div>
                     <div class="node-point-circle"></div>
                     <div class="node-point-info">
                       <div class="node-point-line"></div>
-                      <div class="node-point-text">703_코어_3</div>
+                      <div class="node-point-text">1764_코어_9</div>
+                    </div>
+                  </div>
+                  <div class="node-point">
+                    <div class="node-point-title">노론리~덕송교차로_F3</div>
+                    <div class="node-point-circle"></div>
+                    <div class="node-point-info">
+                      <div class="node-point-line"></div>
+                      <div class="node-point-text">1769_코어_9</div>
                     </div>
                   </div>
                   <div class="node-point">
@@ -1009,11 +1025,7 @@
                 </div>
               </div>
             </div> 
-          </div>
-          <div class="button-group">
-            <button class="btn-white">취소</button>
-            <button class="btn-common btn-save">저장</button>
-          </div>
+          </div>          
         </div>
       </div>    
     </div>
@@ -1236,7 +1248,7 @@
                     <th>위치</th>
                     <th>
                       <div class="f-center">
-                        <input type="checkbox" name="" id="">
+                        <input type="" name="" id="">
                       </div>
                     </th>
                   </tr>
@@ -1414,14 +1426,18 @@
             <div class="map_detail_rect line-72core map_detail_icbus">
               <div class="map_detail_arrow">화살</div>
               <div class="map_detail_con">
-                <p class="map_detail_con_title">BIT 정보</p>
+                <p class="map_detail_con_title">맨홀 정보</p>
                 <div class="map_con_eixt">
-                  <div class="icon-bus">Icon-버스도착정보안내기</div>
-                  <p>신중동역2번출구</p>              
+                  <div class="icon-bus">합강정휴게소~인제IC교차로_SKT 관로-11</div>
+                  <p>합강정휴게소~인제IC교차로_SKT 관로-11</p>              
                 </div>
                 <ul class="map_con_list">
-                  <li>&middot; 정류장번호 : 0000</li>
+                  <li>&middot; 맨홀 ID : 합강정휴게소~인제IC교차로_SKT 관로-11</li>
                   <li>&middot; 정류장명 : 신중동역</li>
+                  <li>&middot; 맨홀 ID : 합강정휴게소~인제IC교차로_SKT 관로-11</li>
+                  <li>&middot; 맨홀 ID : 합강정휴게소~인제IC교차로_SKT 관로-11</li>
+                  <li>&middot; 맨홀 ID : 합강정휴게소~인제IC교차로_SKT 관로-11</li>
+                  <li>&middot; 맨홀 ID : 합강정휴게소~인제IC교차로_SKT 관로-11</li>
                 </ul>
               </div>
             </div>
@@ -1646,18 +1662,17 @@
     })
     //편집
     $(".go-input,.go_modal_standard").on("click",function(){
-      // 함체-editStandard, BIT-editBit, CCTV-editCctv, 신호제어기-editTraffic, TR-editTR, 맨홀-editManhole,
-      // 전주-editPole, 국사-editTelephone, 통신선로-edit4core, 전기선로-editElcore, 관로-editHole    
-      loadLeft("editBit");
+      // 함체-editStandard, BIT-editBit, 통신선로-editLine1, 전기선로-editLine2
+      loadLeft("editBit"); // 이부분만 변경하면 해당 모달창이 뜸.
       loadEvent();
       $(".box-input").removeClass("active");
     })
     //입력
     $(".btn-minput").on("click",function(){
-      if ($(".btn-medit").parents("li").hasClass("active")){
+      // if ($(".btn-medit").parents("li").hasClass("active")){
         loadLeft("input");
         loadEvent();
-      } else $(".error-box").show();
+      // } else $(".error-box").show();
     })
     $(".btn-medit").on("click",function(){
       if ($(this).hasClass("active") == false)
