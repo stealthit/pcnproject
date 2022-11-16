@@ -2092,6 +2092,18 @@ ul.box-input li {
   text-decoration: underline;
 }
 
+.click-overlap.select-popup .content-info {
+  width: 350px !important;
+}
+
+.click-overlap.select-popup .content-info .content-edit-wrap {
+  overflow: auto !important;
+}
+
+.click-overlap.select-popup .content-info table.jb-table tbody tr td {
+  text-align: left !important;
+}
+
 .click-overlap .line_con {
   width: 21px;
 }
@@ -2139,7 +2151,7 @@ ul.box-input li {
 }
 
 .map_detail_rect {
-  width: auto;
+  width: 400px;
   height: 125px;
   display: none;
 }
