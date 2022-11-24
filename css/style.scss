@@ -466,7 +466,7 @@ ul.result-list {
         .sub-title {height: auto;}
         .content-edit-wrap {
           flex: 1;
-          overflow: overlay;      
+          overflow: auto;  //1124 수정    
         }
       }
     }
@@ -882,7 +882,7 @@ ul.result-list {
 
   #sbCanvas {
     position:absolute;
-    left: 35%;
+    left: calc(30% + 16px); /*1124 수정*/
     // top:0; /* 경우에 따라 필요해질 수 있음 */
     // width: 100%;
     // height:100%;
