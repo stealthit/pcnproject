@@ -5,7 +5,7 @@
 }
 
 body {
-  overflow: overlay;
+  overflow: auto;
 }
 
 :root {
@@ -396,6 +396,7 @@ ul.tab-box li:hover {
 }
 
 .modal-wrap {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -407,14 +408,18 @@ ul.tab-box li:hover {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 100%;
+  padding-bottom: 32px;
 }
 
 .modal-wrap .modal-top {
   padding: 15px;
+  background: url(../assets/bg_title@2x.png) no-repeat center;
+  background-size: cover;
 }
 
 .modal-wrap .modal-body {
-  overflow: overlay;
+  overflow: auto;
+  background: url(../assets/img_watermark.png) no-repeat center;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -426,11 +431,43 @@ ul.tab-box li:hover {
 
 .modal-wrap .modal-body .input-box .tab-content {
   max-height: calc(100% - 46px);
-  overflow: overlay;
+  overflow: auto;
 }
 
 .modal-wrap .modal-bottom {
   height: 76px;
+}
+
+.modal-wrap .modal-logo {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 32px;
+  background: #f9f9f9;
+  border-top: 1px solid #ddd;
+  border-radius: 0 0 20px 20px;
+  font-size: 12px;
+  color: #999;
+}
+
+.modal-wrap .modal-logo img {
+  width: 14px;
+  height: 14px;
+}
+
+.modal-wrap .modal-logo .modal-logo-txt {
+  height: 32px;
 }
 
 .content-info {
@@ -550,9 +587,13 @@ ul.tab-box li:hover {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  height: 290px;
+  overflow: auto;
 }
 
 .tb-connect-wrapper {
+  height: 300px;
+  overflow: auto;
   padding: 10px;
   border: solid 1px #d6d6d6;
   background-color: #fff;
@@ -733,9 +774,18 @@ ul.pagination li a.active {
   position: fixed;
   top: 50%;
   left: 50%;
+  background: #fff;
+}
+
+.modal-con:not(.modal-busi-reg-each) {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background: #fff;
+}
+
+.modal-con.modal-busi-reg-each {
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 70px;
 }
 
 .button-group {
@@ -801,6 +851,10 @@ ul.pagination li a.active {
   -webkit-box-align: start !important;
       -ms-flex-align: start !important;
           align-items: flex-start !important;
+}
+
+.gap8 {
+  gap: 8px;
 }
 
 .row-content {
@@ -898,7 +952,7 @@ select, select.select-box {
 }
 
 select:not(.select-box), select.select-box:not(.select-box) {
-  padding: 3px 10px;
+  padding: 3px 25px 3px 10px;
 }
 
 select option, select.select-box option {
@@ -921,7 +975,7 @@ select, select.select-box {
 }
 
 .select-wrap.tb-select {
-  width: 50px;
+  width: 60px;
 }
 
 .select-wrap:not(.tb-select) {
@@ -1359,6 +1413,7 @@ button.btn-type01 {
   font-size: 12px;
   font-weight: bold;
   color: #587595;
+  white-space: nowrap;
 }
 
 button.btn-type01:hover {

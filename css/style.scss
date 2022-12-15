@@ -27,7 +27,29 @@
   visibility: visible;
   transform: translate(-50%, 10px)
 }
+.t-logo {
+  position: fixed;
+  top: 2px;
+  right: 6px;
+  height: 17px;
+  font-size: 12px;
+  font-weight: bold;  
+  color: #082e59;
+}
+.b-logo {
+  display: flex;
+  gap: 7.5px;
+  align-items: center;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  font-size: 12px;
+  font-weight: bold;  
+  line-height: 1.17;  
+  color: #082e59;
 
+  img {width: 25px;height: 25px;}
+}
 .toolbar {
   height: 40px;        
   border-radius: 20px;
@@ -65,8 +87,7 @@
       @include flex_center;
       padding: 0 15px;
       gap: 15px;
-      li {        
-        width: 30px;            
+      li {                
         height: 30px;
         @include flex_center;   
         &:first-child {padding-right: 10px;}
@@ -82,11 +103,11 @@
           border-radius: 15px;
           background-color: rgba(0, 141, 213, 0.1);
         }
-        &:first-child {width:85px;}
+        &:not(:first-child) {width:30px;}
+        &:first-child img{max-height: 20px;width: auto;}
       }
 
-      &.gnb {         
-        width: 840px; 
+      &.gnb {                 
         background: #fff;
 
         @include toolbar_images;
@@ -259,6 +280,13 @@
     z-index: 300;
   }
   .modal-busi-reg-batch, .modal-busi-reg-each {z-index: 300;}
+  .modal-busi-reg-each {
+    width: 600px;
+    .table-wrapper {
+      height: 129px;
+      overflow: auto; 
+    }
+  }
   .modal-user-m, .modal-pass-m {
     .row {grid-template-columns: 110px 1fr;}
   }
@@ -273,7 +301,7 @@
 // ---- end common ------------------
 // search
 .modal-search {  
-  width: 480px;
+  width: 500px;
   .modal-body {
     overflow: hidden;    
     // min-height: 500px;
@@ -335,8 +363,9 @@
   }
 }
 
-ul.result-list {
-  overflow: overlay;
+ul.result-list {  
+  // 12.11 모든 팝업 스크롤 변경
+  overflow: auto;
   display: flex;
   flex-direction: column;
   // max-height: 550px;  
@@ -405,7 +434,8 @@ ul.result-list {
           .content-info {
             .table-wrapper {              
               max-height: 161px;
-              overflow: auto;
+              // 12.11 모든 팝업 스크롤 변경
+  overflow: auto;
             }
           } 
         }
@@ -456,7 +486,8 @@ ul.result-list {
       &.active { display: flex;}
       flex-direction: column;
       flex: 1;      
-      overflow: overlay;
+      // 12.11 모든 팝업 스크롤 변경
+  overflow: auto;
 
       .content-info.sunbun {
         flex: 1;
@@ -466,7 +497,8 @@ ul.result-list {
         .sub-title {height: auto;}
         .content-edit-wrap {
           flex: 1;
-          overflow: auto;  //1124 수정    
+          // 12.11 모든 팝업 스크롤 변경
+  overflow: auto;  //1124 수정    
         }
       }
     }
@@ -491,7 +523,7 @@ ul.result-list {
 }
 .modal-connect {
   display: none;
-  width: 850px;
+  width: 1000px;
   // height: 300px;
   .node-error {
     width: 100px;
@@ -530,7 +562,8 @@ ul.result-list {
         overflow: hidden;
 
         .table-wrapper {
-          overflow: overlay;
+          // 12.11 모든 팝업 스크롤 변경
+  overflow: auto;
           flex: 1;
         }
       }
@@ -751,7 +784,8 @@ ul.result-list {
   width: 900px;
   .modal-body {
     // max-height: 700px;
-    overflow: overlay;
+    // 12.11 모든 팝업 스크롤 변경
+  overflow: auto;
   }
   .content-edit-wrap {
     // max-width: 550px;
@@ -789,6 +823,11 @@ ul.result-list {
           border-radius: 100%;
           background-color: #dfdfdf;
         }
+        .b-point {
+          position: absolute;
+          bottom: -34px;
+          z-index: 1;
+        }
         .node-point-info {
           position: absolute;
           display: flex;
@@ -799,8 +838,22 @@ ul.result-list {
             width: 145px;
             height: 25px;
             margin: 10.5px 0 6.2px 11.3px;
-            border: solid 1px #666;
-            border-top: none;
+
+            &.line1 {
+              border: solid 1px #666;
+              border-top: none;
+            }
+            &.line2 {
+              border-left: 1px solid #666;
+              border-bottom: solid 1px #666;              
+            }
+            &.line3 {
+              border-right: 1px solid #666;
+              border-bottom: solid 1px #666;              
+            }
+            &.line4 {            
+              border-bottom: solid 1px #666;              
+            }
           }
           .node-point-text {
             font-size: 12px;      
@@ -814,6 +867,7 @@ ul.result-list {
   }
 }
 .tb-sunbun {    
+  // 12.11 모든 팝업 스크롤 변경
   overflow: auto;
   position: relative;  
 
@@ -831,6 +885,7 @@ ul.result-list {
     td {
       border-bottom: 1px solid #ddd;
     }
+    tbody tr td {font-size: 10px;}
   }
   .tb-line {
     position: absolute;
@@ -965,7 +1020,8 @@ ul.result-list {
       width:240px;height:427px;border:1px solid #ccc;border-radius:4px;
       .filter_ul{ 
         width: 100%; padding:10px 16px; display:flex; flex-direction: column;
-        overflow: overlay;
+        // 12.11 모든 팝업 스크롤 변경
+  overflow: auto;
         height: 100%;
         li{ 
           display:flex; 
@@ -1161,7 +1217,8 @@ ul.box-input {
     }
     .content-edit-wrap {
       height: calc(100% - 44px);
-      overflow: overlay;  
+      // 12.11 모든 팝업 스크롤 변경
+  overflow: auto;  
     }
     table td {text-decoration: underline;}
   }
@@ -1310,13 +1367,23 @@ ul.box-input {
   .map_detail_memo_rect{display:none;}
   .map_detail_con{
     padding: 15px 18px 10px 18px;
-    width: 122px;
-    height: 76px;
+    width: 200px;
+    height: 90px;
     font-size: 14px; 
     border:0; 
     border-radius:4px 4px 4px 0px;
     box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.25);    
     color: #666;
+
+    p {
+      width: 100%;
+      height:100%;
+      white-space: normal;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
   }
   .map_detail_arrow_m{width:0px;height:0px; border-right:10px solid transparent; border-top:10px solid #fff}
 } 

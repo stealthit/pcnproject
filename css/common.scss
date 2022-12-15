@@ -6,7 +6,8 @@
 
 body {
   // background-color: $colors_background;  
-  overflow: overlay;
+  // 12.11 모든 팝업 스크롤 변경
+  overflow: auto;
 }
 :root {
   -webkit-tap-highlight-color: transparent;
@@ -325,27 +326,52 @@ ul.tab-box {
 }
 // pages
 .modal-wrap {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  padding-bottom: 32px;
   .modal-top {    
     padding: 15px;
+    background: url(../assets/bg_title@2x.png) no-repeat center;  
+    background-size: cover;  
   }
   .modal-body {
-    overflow: overlay;
+    // 12.11 모든 팝업 스크롤 변경
+  overflow: auto;
+    background: url(../assets/img_watermark.png) no-repeat center;  
     flex: 1;
     .input-box {
       height: 100%;
       ul.tab-box {}
       .tab-content {
         max-height: calc(100% - 46px);
-        overflow: overlay;
+        // 12.11 모든 팝업 스크롤 변경
+  overflow: auto;
       }
     }
   }
   .modal-bottom {
     height: 76px;
+  }
+  .modal-logo {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    background: #f9f9f9;
+    border-top: 1px solid #ddd;
+    border-radius: 0 0 20px 20px;
+    font-size: 12px;        
+    color: #999;
+    img {width: 14px;height: 14px;}
+    .modal-logo-txt {height: 32px;}
   }
 }
 .content-info {
@@ -412,9 +438,15 @@ ul.tab-box {
 .table-wrapper-2h {
   display: flex;
   gap: 20px;
-  .table-inner {flex:1;}
+  .table-inner {
+    flex:1;
+    height: 290px;
+    overflow: auto;
+  }
 }
 .tb-connect-wrapper {
+  height: 300px;
+  overflow: auto;
   padding: 10px;
   border: solid 1px #d6d6d6;
   background-color: #fff;
@@ -531,8 +563,13 @@ ul.pagination {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   background: #fff;
+  &:not(.modal-busi-reg-each){transform: translate(-50%, -50%);}  
+
+  &.modal-busi-reg-each {
+    transform: translateX(-50%);
+    top: 70px;
+  }
 }
 
 .button-group {
@@ -564,6 +601,7 @@ ul.pagination {
   flex-direction: column;  
   align-items: flex-start !important;
 }
+.gap8 {gap: 8px;}
 .row-content {
   display: flex;
   gap: 20px;  
@@ -632,7 +670,7 @@ select, select.select-box {
   // border: solid 1px $colors_line;
   background-color: white;
   padding: 0 15px;
-  &:not(.select-box){padding: 3px 10px;}  
+  &:not(.select-box){padding: 3px 25px 3px 10px;}  
   height: 38px;
 
   option {
@@ -656,7 +694,7 @@ select, select.select-box {
   border: solid 1px #dfdfdf;
   background-color: #fff;
   
-  &.tb-select {width: 50px;}  
+  &.tb-select {width: 60px;}  
   &:not(.tb-select) {min-width: 100px};
 }
 
@@ -988,6 +1026,7 @@ button.btn-type01 {
   font-size: 12px;
   font-weight: bold;
   color: #587595;
+  white-space: nowrap;
 
   &:hover {
     background-color: #f5f5f5;      
